@@ -181,7 +181,7 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
 
 /* Footer */
 .app-footer {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  background: #121212;
   color: white;
   margin-top: 4rem;
 }
