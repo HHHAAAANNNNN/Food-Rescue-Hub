@@ -146,6 +146,129 @@
       </div>
     </section>
 
+    <!-- Why It Matters Section -->
+    <section class="why-matters-section">
+      <div class="why-matters-container">
+        <div class="section-intro">
+          <span class="intro-badge">The Crisis We Face</span>
+          <h2 class="section-title">Mengapa Kontribusi Anda Sangat Penting?</h2>
+          <p class="section-subtitle">
+            Di tengah melimpahnya produksi pangan, jutaan orang masih kelaparan. 
+            Ini bukan masalah kekurangan—ini masalah distribusi yang tidak merata.
+          </p>
+        </div>
+
+        <div class="crisis-stats">
+          <div class="stat-card urgent">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                <line x1="10" x2="10" y1="11" y2="17"></line>
+                <line x1="14" x2="14" y1="11" y2="17"></line>
+              </svg>
+            </div>
+            <div class="stat-value">20 Juta Ton</div>
+            <div class="stat-label">Limbah makanan per tahun di Indonesia</div>
+            <div class="stat-source">UNEP Food Waste Index 2021</div>
+          </div>
+
+          <div class="stat-card warning">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                <path d="M12 18V6"></path>
+              </svg>
+            </div>
+            <div class="stat-value">4-5% PDB</div>
+            <div class="stat-label">Kerugian ekonomi tahunan akibat food waste</div>
+            <div class="stat-source">Waluyo, 2023</div>
+          </div>
+
+          <div class="stat-card critical">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-value">Jutaan Orang</div>
+            <div class="stat-label">Belum akses makanan layak di ASEAN</div>
+            <div class="stat-source">Purwanti, 2022</div>
+          </div>
+        </div>
+
+        <div class="paradox-highlight">
+          <div class="paradox-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+              <path d="M12 9v4"></path>
+              <path d="M12 17h.01"></path>
+            </svg>
+          </div>
+          <div class="paradox-content">
+            <h3>Paradoks Pangan ASEAN</h3>
+            <p>
+              Indonesia adalah <strong>penyumbang limbah makanan terbesar di ASEAN</strong>, 
+              namun jutaan keluarga masih mengalami <strong>kerawanan pangan</strong>. 
+              Masalahnya bukan produksi—melainkan <strong>distribusi yang tidak efisien</strong> 
+              di sepanjang rantai pasok makanan.
+            </p>
+          </div>
+        </div>
+
+        <div class="solution-bridge">
+          <div class="bridge-line"></div>
+          <div class="bridge-content">
+            <h3>Dari Masalah Menuju Solusi</h3>
+            <div class="solution-points">
+              <div class="solution-point">
+                <div class="point-number">1</div>
+                <div class="point-content">
+                  <h4>Pemberdayaan Komunitas</h4>
+                  <p>Bottom-up approach yang melibatkan RT/RW dalam pengumpulan dan distribusi pangan berlebih</p>
+                </div>
+              </div>
+              <div class="solution-point">
+                <div class="point-number">2</div>
+                <div class="point-content">
+                  <h4>Teknologi Digital</h4>
+                  <p>Platform berbasis komunitas untuk memperkuat literasi digital dan kemandirian ekonomi lokal</p>
+                </div>
+              </div>
+              <div class="solution-point">
+                <div class="point-number">3</div>
+                <div class="point-content">
+                  <h4>Edukasi & Pelatihan</h4>
+                  <p>Pelatihan pengelolaan makanan dan pengolahan bahan mentah untuk meningkatkan kompetensi masyarakat</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <h3>Setiap Kontribusi Menciptakan Dampak Nyata</h3>
+          <p>
+            NourishHub bukan sekadar mengurangi limbah makanan—kami membangun 
+            <strong>ekosistem pangan berkelanjutan</strong> yang memperkuat ketahanan 
+            sosial-ekonomi masyarakat di tingkat akar rumput.
+          </p>
+          <button class="cta-button" @click="scrollToContact">
+            Bergabung dengan Gerakan Ini
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- SDGs Section -->
     <section id="sdgs" class="sdgs-section" v-if="profile.sdgs && profile.sdgs.length > 0">
       <div class="sdgs-header">
@@ -242,6 +365,13 @@ const goToRegion = (id) => {
   router.push({ name: "RegionDashboard", params: { id } });
 };
 
+const scrollToContact = () => {
+  const contactSection = document.querySelector('#contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 const scrollRegions = (direction) => {
   if (!regionList.value) return;
   const scrollAmount = 300;
@@ -253,7 +383,17 @@ const scrollRegions = (direction) => {
 <style scoped>
 .main-dashboard {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 50%, #f0fdf4 100%);
+  background: linear-gradient(
+    180deg, 
+    transparent 0%, 
+    #ffffff 20%, 
+    #ffffff 40%, 
+    #ecfdf5 50%, 
+    #d1fae5 60%, 
+    #10b981 70%,
+    #064e3b 85%, 
+    #064e3b 100%
+  );
 }
 
 /* Profile Section (formerly Hero Section) */
@@ -263,12 +403,14 @@ const scrollRegions = (direction) => {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   align-items: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 24px;
-  margin-top: 2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .hero-content {
@@ -498,14 +640,319 @@ const scrollRegions = (direction) => {
   }
 }
 
+/* Why It Matters Section */
+.why-matters-section {
+  padding: 6rem 2rem;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-matters-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.intro-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 50px;
+  color: #fca5a5;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #d1fae5;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.crisis-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.stat-card.urgent::before {
+  background: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
+}
+
+.stat-card.warning::before {
+  background: linear-gradient(90deg, #f59e0b 0%, #eab308 100%);
+}
+
+.stat-card.critical::before {
+  background: linear-gradient(90deg, #dc2626 0%, #be123c 100%);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.stat-icon svg {
+  color: #34d399;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #d1fae5;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.stat-source {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  font-style: italic;
+}
+
+.paradox-highlight {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.15) 100%);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 24px;
+  padding: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.paradox-icon {
+  flex-shrink: 0;
+}
+
+.paradox-icon svg {
+  color: #fca5a5;
+}
+
+.paradox-content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #fecaca;
+}
+
+.paradox-content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #d1fae5;
+  margin: 0;
+}
+
+.paradox-content strong {
+  color: #fca5a5;
+  font-weight: 700;
+}
+
+.solution-bridge {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.bridge-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #34d399 0%, transparent 100%);
+  transform: translateX(-50%);
+}
+
+.bridge-content h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 3rem;
+  color: #6ee7b7;
+}
+
+.solution-points {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.solution-point {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.solution-point:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(10px);
+}
+
+.point-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.point-content h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: #6ee7b7;
+}
+
+.point-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1fae5;
+  margin: 0;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.cta-box h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: white;
+}
+
+.cta-box p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-box strong {
+  color: white;
+  font-weight: 700;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: white;
+  color: #065f46;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  background: #f0fdf4;
+}
+
+.cta-button svg {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+  transform: translateX(4px);
+}
+
 /* SDGs Section */
 .sdgs-section {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-  border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .sdgs-header {
@@ -709,7 +1156,7 @@ const scrollRegions = (direction) => {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
     gap: 2rem;
-    margin: 1rem;
+    margin: 20px 1rem 0;
   }
 
   .hero-title {
@@ -763,6 +1210,54 @@ const scrollRegions = (direction) => {
 
   .scroll-btn {
     display: none;
+  }
+
+  .why-matters-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .crisis-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .paradox-highlight {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .solution-point {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .solution-point:hover {
+    transform: translateY(-4px);
+  }
+
+  .bridge-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-box {
+    padding: 2rem;
+  }
+
+  .cta-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
   }
 
   .sdgs-section {

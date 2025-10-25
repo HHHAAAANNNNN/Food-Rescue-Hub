@@ -221,12 +221,13 @@ const handleSignup = () => {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 250px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(240, 253, 244, 0.5) 50%,
-    #f9fafb 100%
+    rgba(4, 120, 87, 0.3) 20%,
+    rgba(236, 253, 245, 0.7) 60%,
+    #ffffff 100%
   );
   z-index: 1;
 }
