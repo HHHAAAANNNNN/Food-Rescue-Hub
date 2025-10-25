@@ -153,7 +153,10 @@
           <span class="intro-badge">The Crisis We Face</span>
           <h2 class="section-title">Mengapa Kontribusi Anda Sangat Penting?</h2>
           <p class="section-subtitle">
-            Di tengah melimpahnya produksi pangan, jutaan orang masih kelaparan. 
+            Di tengah melimpahnya produksi pangan, jutaan orang masih kelaparan.
+          </p>
+
+          <p class="section-subtitle">  
             Ini bukan masalah kekurangan—ini masalah distribusi yang tidak merata.
           </p>
         </div>
@@ -201,56 +204,18 @@
             <div class="stat-source">Purwanti, 2022</div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="paradox-highlight">
-          <div class="paradox-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
-              <path d="M12 9v4"></path>
-              <path d="M12 17h.01"></path>
-            </svg>
-          </div>
-          <div class="paradox-content">
-            <h3>Paradoks Pangan ASEAN</h3>
-            <p>
-              Indonesia adalah <strong>penyumbang limbah makanan terbesar di ASEAN</strong>, 
-              namun jutaan keluarga masih mengalami <strong>kerawanan pangan</strong>. 
-              Masalahnya bukan produksi—melainkan <strong>distribusi yang tidak efisien</strong> 
-              di sepanjang rantai pasok makanan.
-            </p>
-          </div>
-        </div>
+    <!-- Food Waste Chart Section -->
+    <FoodWasteChart />
 
-        <div class="solution-bridge">
-          <div class="bridge-line"></div>
-          <div class="bridge-content">
-            <h3>Dari Masalah Menuju Solusi</h3>
-            <div class="solution-points">
-              <div class="solution-point">
-                <div class="point-number">1</div>
-                <div class="point-content">
-                  <h4>Pemberdayaan Komunitas</h4>
-                  <p>Bottom-up approach yang melibatkan RT/RW dalam pengumpulan dan distribusi pangan berlebih</p>
-                </div>
-              </div>
-              <div class="solution-point">
-                <div class="point-number">2</div>
-                <div class="point-content">
-                  <h4>Teknologi Digital</h4>
-                  <p>Platform berbasis komunitas untuk memperkuat literasi digital dan kemandirian ekonomi lokal</p>
-                </div>
-              </div>
-              <div class="solution-point">
-                <div class="point-number">3</div>
-                <div class="point-content">
-                  <h4>Edukasi & Pelatihan</h4>
-                  <p>Pelatihan pengelolaan makanan dan pengolahan bahan mentah untuk meningkatkan kompetensi masyarakat</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- How It Works Section -->
+    <HowItWorks />
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container">
         <div class="cta-box">
           <h3>Setiap Kontribusi Menciptakan Dampak Nyata</h3>
           <p>
@@ -333,6 +298,8 @@ import RegionCard from "@/components/RegionCard.vue";
 import SDGCard from "@/components/SDGCard.vue";
 import NavBar from "@/components/NavBar.vue";
 import HeroSection from "@/components/HeroSection.vue";
+import FoodWasteChart from "@/components/FoodWasteChart.vue";
+import HowItWorks from "@/components/HowItWorks.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -642,7 +609,7 @@ const scrollRegions = (direction) => {
 
 /* Why It Matters Section */
 .why-matters-section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 2rem;
   background: transparent;
   color: white;
   position: relative;
@@ -658,7 +625,7 @@ const scrollRegions = (direction) => {
 
 .section-intro {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .intro-badge {
@@ -698,7 +665,7 @@ const scrollRegions = (direction) => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 0;
 }
 
 .stat-card {
@@ -776,116 +743,6 @@ const scrollRegions = (direction) => {
   font-style: italic;
 }
 
-.paradox-highlight {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.15) 100%);
-  border: 2px solid rgba(239, 68, 68, 0.3);
-  border-radius: 24px;
-  padding: 3rem;
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 4rem;
-}
-
-.paradox-icon {
-  flex-shrink: 0;
-}
-
-.paradox-icon svg {
-  color: #fca5a5;
-}
-
-.paradox-content h3 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 1rem;
-  color: #fecaca;
-}
-
-.paradox-content p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #d1fae5;
-  margin: 0;
-}
-
-.paradox-content strong {
-  color: #fca5a5;
-  font-weight: 700;
-}
-
-.solution-bridge {
-  position: relative;
-  margin-bottom: 4rem;
-}
-
-.bridge-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #34d399 0%, transparent 100%);
-  transform: translateX(-50%);
-}
-
-.bridge-content h3 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 3rem;
-  color: #6ee7b7;
-}
-
-.solution-points {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.solution-point {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
-
-.solution-point:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(10px);
-}
-
-.point-number {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-}
-
-.point-content h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-  color: #6ee7b7;
-}
-
-.point-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #d1fae5;
-  margin: 0;
-}
-
 .cta-box {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   border-radius: 24px;
@@ -943,6 +800,19 @@ const scrollRegions = (direction) => {
 
 .cta-button:hover svg {
   transform: translateX(4px);
+}
+
+/* CTA Section (Standalone) */
+.cta-section {
+  padding: 4rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* SDGs Section */
@@ -1229,22 +1099,8 @@ const scrollRegions = (direction) => {
     gap: 1.5rem;
   }
 
-  .paradox-highlight {
-    flex-direction: column;
-    padding: 2rem;
-  }
-
-  .solution-point {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-
-  .solution-point:hover {
-    transform: translateY(-4px);
-  }
-
-  .bridge-content h3 {
-    font-size: 1.5rem;
+  .cta-section {
+    padding: 2rem 1rem;
   }
 
   .cta-box {
