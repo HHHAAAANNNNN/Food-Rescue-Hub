@@ -1,15 +1,47 @@
 <template>
   <div class="main-dashboard">
-    <!-- Hero Section with Project Profile -->
-    <section class="hero-section">
+    <!-- Navbar -->
+    <NavBar />
+
+    <!-- Hero Section with Background Image -->
+    <HeroSection />
+
+    <!-- Project Profile Section -->
+    <section id="about" class="profile-section">
       <div class="hero-content">
-        <div class="hero-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
-          </svg>
-          <span>Social Enterprise Platform</span>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            <span>Social Enterprise Platform</span>
+          </div>
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Empowering Local Communities</span>
+          </div>
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+              <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
+              <path d="M12 3v6"></path>
+            </svg>
+            <span>Food Waste Management Program</span>
+          </div>
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+            <span>ASEAN Sustainable Initiative</span>
+          </div>
         </div>
         <h1 class="hero-title">{{ profile.title }}</h1>
         <p class="hero-description">{{ profile.description }}</p>
@@ -21,7 +53,7 @@
           </svg>
           <span>{{ profile.vision }}</span>
         </blockquote>
-        <div class="hero-contact">
+        <div id="contact" class="hero-contact">
           <a :href="`mailto:${profile.contact?.email}`" class="contact-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -37,38 +69,100 @@
             </svg>
             {{ profile.contact?.instagram }}
           </a>
+          <a :href="`https://wa.me/${profile.contact?.whatsapp?.replace(/[^0-9]/g, '')}`" target="_blank" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M16 10h.01"></path>
+            </svg>
+            {{ profile.contact?.whatsapp }}
+          </a>
         </div>
       </div>
       <div class="hero-illustration">
-        <div class="floating-card card-1">
+        <!-- SDG 2: Zero Hunger -->
+        <div class="floating-card card-1 sdg-theme">
+          <div class="card-badge">SDG 2</div>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
             <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
             <path d="M12 3v6"></path>
           </svg>
-          <span>Zero Waste</span>
+          <span>Zero Hunger</span>
         </div>
-        <div class="floating-card card-2">
+
+        <!-- SDG 12: Responsible Consumption -->
+        <div class="floating-card card-2 sdg-theme">
+          <div class="card-badge">SDG 12</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18"></path>
+            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+            <line x1="10" x2="10" y1="11" y2="17"></line>
+            <line x1="14" x2="14" y1="11" y2="17"></line>
+          </svg>
+          <span>Reduce Waste</span>
+        </div>
+
+        <!-- SDG 11: Sustainable Cities -->
+        <div class="floating-card card-3 sdg-theme">
+          <div class="card-badge">SDG 11</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18"></path>
+            <path d="M9 8h1"></path>
+            <path d="M9 12h1"></path>
+            <path d="M9 16h1"></path>
+            <path d="M14 8h1"></path>
+            <path d="M14 12h1"></path>
+            <path d="M14 16h1"></path>
+            <path d="M6 3h12a2 2 0 0 1 2 2v16H4V5a2 2 0 0 1 2-2z"></path>
+          </svg>
+          <span>Green Cities</span>
+        </div>
+
+        <!-- SDG 8: Decent Work -->
+        <div class="floating-card card-4 sdg-theme">
+          <div class="card-badge">SDG 8</div>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <span>Community</span>
+          <span>Fair Work</span>
         </div>
-        <div class="floating-card card-3">
+
+        <!-- SDG 17: Partnerships -->
+        <div class="floating-card card-5 sdg-theme">
+          <div class="card-badge">SDG 17</div>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20"></path>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
           </svg>
-          <span>Sustainable</span>
+          <span>Partnership</span>
         </div>
       </div>
     </section>
 
+    <!-- SDGs Section -->
+    <section id="sdgs" class="sdgs-section" v-if="profile.sdgs && profile.sdgs.length > 0">
+      <div class="sdgs-header">
+        <h2>Sustainable Development Goals</h2>
+        <p>NourishHub berkontribusi langsung terhadap pencapaian SDGs berikut:</p>
+      </div>
+      <div class="sdgs-grid">
+        <SDGCard
+          v-for="sdg in profile.sdgs"
+          :key="sdg.number"
+          :sdg="sdg"
+        />
+      </div>
+    </section>
+
     <!-- Region Section -->
-    <section class="region-section">
+    <section id="regions" class="region-section">
       <div class="section-header">
         <div>
           <h2>Daerah Kontributor Komunitas</h2>
@@ -113,6 +207,9 @@
 import { onMounted, ref } from "vue";
 import { getDashboardData } from "@/controllers/dashboardController";
 import RegionCard from "@/components/RegionCard.vue";
+import SDGCard from "@/components/SDGCard.vue";
+import NavBar from "@/components/NavBar.vue";
+import HeroSection from "@/components/HeroSection.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -156,11 +253,11 @@ const scrollRegions = (direction) => {
 <style scoped>
 .main-dashboard {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 50%, #f0fdf4 100%);
 }
 
-/* Hero Section */
-.hero-section {
+/* Profile Section (formerly Hero Section) */
+.profile-section {
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -168,10 +265,21 @@ const scrollRegions = (direction) => {
   max-width: 1400px;
   margin: 0 auto;
   align-items: center;
+  background: white;
+  border-radius: 24px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .hero-content {
   animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-badge {
@@ -184,20 +292,39 @@ const scrollRegions = (direction) => {
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #111827;
   margin: 0 0 1rem;
   line-height: 1.2;
-  background: linear-gradient(135deg, #111827 0%, #059669 100%);
+  background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
+}
+
+.hero-title::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(8px);
+  opacity: 0.3;
 }
 
 .hero-description {
@@ -264,7 +391,7 @@ const scrollRegions = (direction) => {
 /* Hero Illustration */
 .hero-illustration {
   position: relative;
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -276,44 +403,152 @@ const scrollRegions = (direction) => {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   background: white;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   color: #10b981;
   font-weight: 600;
+  font-size: 0.875rem;
   animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.floating-card:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
+  z-index: 10;
+}
+
+.floating-card.sdg-theme {
+  background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+}
+
+.floating-card.impact-theme {
+  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+  border: 2px solid #10b981;
+}
+
+.card-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .floating-card svg {
   color: #10b981;
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
 }
 
+.floating-card.impact-theme svg {
+  color: #059669;
+}
+
+/* Positioning untuk 5 floating cards - arranged in a balanced layout */
 .card-1 {
-  top: 10%;
-  left: 10%;
+  top: 8%;
+  left: 12%;
   animation-delay: 0s;
 }
 
 .card-2 {
-  top: 50%;
-  right: 10%;
-  animation-delay: 1s;
+  top: 12%;
+  right: 15%;
+  animation-delay: 0.6s;
 }
 
 .card-3 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 1.2s;
+}
+
+.card-4 {
+  top: 48%;
+  right: 8%;
+  animation-delay: 1.8s;
+}
+
+.card-5 {
   bottom: 10%;
-  left: 30%;
-  animation-delay: 2s;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 2.4s;
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
-  50% {
-    transform: translateY(-20px);
+  33% {
+    transform: translateY(-15px) rotate(2deg);
   }
+  66% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+/* SDGs Section */
+.sdgs-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sdgs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sdgs-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, #047857 0%, #10b981 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sdgs-header p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sdgs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sdgs-grid > * {
+  flex: 0 1 calc(33.333% - 1.35rem);
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.sdgs-grid > :nth-child(n+4) {
+  flex: 0 1 calc(50% - 1rem);
+  max-width: 350px;
 }
 
 /* Region Section */
@@ -470,10 +705,11 @@ const scrollRegions = (direction) => {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-section {
+  .profile-section {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
     gap: 2rem;
+    margin: 1rem;
   }
 
   .hero-title {
@@ -481,7 +717,44 @@ const scrollRegions = (direction) => {
   }
 
   .hero-illustration {
-    height: 300px;
+    height: 350px;
+  }
+
+  /* Adjust floating cards for mobile - 5 cards balanced layout */
+  .floating-card {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .floating-card svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card-1 {
+    top: 8%;
+    left: 5%;
+  }
+
+  .card-2 {
+    top: 8%;
+    right: 5%;
+  }
+
+  .card-3 {
+    top: 40%;
+    left: 5%;
+  }
+
+  .card-4 {
+    top: 40%;
+    right: 5%;
+  }
+
+  .card-5 {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .section-header {
@@ -490,6 +763,34 @@ const scrollRegions = (direction) => {
 
   .scroll-btn {
     display: none;
+  }
+
+  .sdgs-section {
+    padding: 2rem 1rem;
+  }
+
+  .sdgs-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .sdgs-grid > * {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  .sdgs-grid > :nth-child(n+4) {
+    flex: 0 1 100%;
+  }
+}
+
+/* Tablet responsiveness for SDGs */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .sdgs-grid > * {
+    flex: 0 1 calc(50% - 1rem);
+  }
+
+  .sdgs-grid > :nth-child(n+4) {
+    flex: 0 1 calc(50% - 1rem);
   }
 }
 </style>

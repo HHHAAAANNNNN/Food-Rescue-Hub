@@ -20,6 +20,7 @@ NourishHub adalah model social enterprise hibrida yang dirancang untuk mengatasi
 ### 1. Dashboard Utama Interaktif
 - Hero section dengan profil proyek yang memukau
 - Animasi floating cards menampilkan value proposition
+- **SDGs Section** - Menampilkan 5 SDGs yang didukung dengan design interaktif
 - Horizontal scroll cards untuk navigasi antar wilayah
 - Desain modern dengan gradient dan shadow effects
 
@@ -29,7 +30,14 @@ NourishHub adalah model social enterprise hibrida yang dirancang untuk mengatasi
 - Visualisasi tren donasi bulanan menggunakan Chart.js
 - Distribusi bahan pangan dengan badge menarik
 
-### 3. UX yang Memukau
+### 3. SDGs Integration (NEW! 🎯)
+- **SDG 2**: Zero Hunger - Distribusi makanan bergizi
+- **SDG 8**: Decent Work & Growth - Pemberdayaan ekonomi
+- **SDG 11**: Sustainable Cities - Hub komunitas berkelanjutan
+- **SDG 12**: Responsible Consumption - Pengurangan food waste
+- **SDG 17**: Partnerships - Kolaborasi multi-stakeholder
+
+### 4. UX yang Memukau
 - Smooth transitions dan animations
 - Loading states yang elegan
 - Error handling dengan friendly messages
@@ -55,6 +63,7 @@ src/
 ├── components/         # Reusable UI components
 │   ├── RegionCard.vue
 │   ├── StatsCard.vue
+│   ├── SDGCard.vue     # NEW: SDG display component
 │   └── charts/
 │       └── DonasiTrendChart.vue
 └── router/             # Vue Router configuration
