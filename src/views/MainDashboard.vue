@@ -159,6 +159,10 @@
           <p class="section-subtitle">  
             Ini bukan masalah kekurangan—ini masalah distribusi yang tidak merata.
           </p>
+          
+          <p class="section-hook">
+            💡 Mari kita lihat fakta-fakta mengejutkan di balik krisis pangan Indonesia dan ASEAN:
+          </p>
         </div>
 
         <div class="crisis-stats">
@@ -213,32 +217,22 @@
     <!-- How It Works Section -->
     <HowItWorks />
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-container">
-        <div class="cta-box">
-          <h3>Setiap Kontribusi Menciptakan Dampak Nyata</h3>
-          <p>
-            NourishHub bukan sekadar mengurangi limbah makanan—kami membangun 
-            <strong>ekosistem pangan berkelanjutan</strong> yang memperkuat ketahanan 
-            sosial-ekonomi masyarakat di tingkat akar rumput.
-          </p>
-          <button class="cta-button" @click="scrollToContact">
-            Bergabung dengan Gerakan Ini
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
     <!-- SDGs Section -->
     <section id="sdgs" class="sdgs-section" v-if="profile.sdgs && profile.sdgs.length > 0">
       <div class="sdgs-header">
+        <span class="sdgs-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <span>Global Impact Alignment</span>
+        </span>
         <h2>Sustainable Development Goals</h2>
         <p>NourishHub berkontribusi langsung terhadap pencapaian SDGs berikut:</p>
+        <p class="sdgs-hook">
+          🌍 Setiap aksi lokal menciptakan dampak global. Inilah kontribusi kami untuk dunia yang lebih baik:
+        </p>
       </div>
       <div class="sdgs-grid">
         <SDGCard
@@ -253,8 +247,18 @@
     <section id="regions" class="region-section">
       <div class="section-header">
         <div>
+          <span class="region-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Community Hubs</span>
+          </span>
           <h2>Daerah Kontributor Komunitas</h2>
           <p>Jelajahi berbagai wilayah yang aktif berkontribusi dalam ekosistem pangan berkelanjutan</p>
+          <p class="region-hook">
+            📍 Dari RT/RW hingga kota besar—gerakan ini tumbuh di mana-mana. Lihat komunitas yang sudah bergabung:
+          </p>
         </div>
         <div class="region-count">
           <span class="count">{{ regions.length }}</span>
@@ -280,6 +284,27 @@
             <path d="m9 18 6-6-6-6"/>
           </svg>
         </button>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-box">
+          <h3>Setiap Kontribusi Menciptakan Dampak Nyata</h3>
+          <p>
+            NourishHub bukan sekadar mengurangi limbah makanan—kami membangun 
+            <strong>ekosistem pangan berkelanjutan</strong> yang memperkuat ketahanan 
+            sosial-ekonomi masyarakat di tingkat akar rumput.
+          </p>
+          <button class="cta-button" @click="scrollToContact">
+            Bergabung dengan Gerakan Ini
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -358,8 +383,12 @@ const scrollRegions = (direction) => {
     #ecfdf5 50%, 
     #d1fae5 60%, 
     #10b981 70%,
-    #064e3b 85%, 
-    #064e3b 100%
+    #059669 76%,
+    #047857 82%,
+    #065f46 87%,
+    #064e3b 91%,
+    #033d2a 94%,
+    #2596be 100%
   );
 }
 
@@ -661,6 +690,19 @@ const scrollRegions = (direction) => {
   line-height: 1.6;
 }
 
+.section-hook {
+  font-size: 1.125rem;
+  color: #fca5a5;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
 .crisis-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -744,10 +786,11 @@ const scrollRegions = (direction) => {
 }
 
 .cta-box {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #047857 0%, #065f46 50%, #064e3b 100%);
   border-radius: 24px;
   padding: 3rem;
   text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .cta-box h3 {
@@ -817,7 +860,7 @@ const scrollRegions = (direction) => {
 
 /* SDGs Section */
 .sdgs-section {
-  padding: 6rem 2rem 4rem;
+  padding: 1rem 2rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
   background: transparent;
@@ -830,21 +873,45 @@ const scrollRegions = (direction) => {
   margin-bottom: 3rem;
 }
 
+.sdgs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: 50px;
+  color: #d1fae5;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.sdgs-badge svg {
+  color: #6ee7b7;
+}
+
 .sdgs-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0 0 1rem;
-  background: linear-gradient(135deg, #047857 0%, #10b981 50%, #34d399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .sdgs-header p {
-  color: #6b7280;
+  color: #d1fae5;
   font-size: 1.125rem;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.sdgs-hook {
+  color: #6ee7b7 !important;
+  font-weight: 600 !important;
+  margin-top: 1rem !important;
+  font-size: 1.0625rem !important;
 }
 
 .sdgs-grid {
@@ -883,17 +950,44 @@ const scrollRegions = (direction) => {
   gap: 2rem;
 }
 
+.region-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: 50px;
+  color: #d1fae5;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.region-badge svg {
+  color: #6ee7b7;
+}
+
 .section-header h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
   margin: 0 0 0.5rem;
 }
 
 .section-header p {
-  color: #6b7280;
+  color: #d1fae5;
   font-size: 1rem;
   margin: 0;
+}
+
+.region-hook {
+  color: #6ee7b7 !important;
+  font-weight: 600 !important;
+  margin-top: 0.75rem !important;
+  font-size: 1rem !important;
 }
 
 .region-count {
