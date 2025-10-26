@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-section">
+  <section id="chart" class="chart-section">
     <!-- Hook Header Section -->
     <div class="hook-header">
       <div class="hook-badge">
@@ -52,7 +52,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

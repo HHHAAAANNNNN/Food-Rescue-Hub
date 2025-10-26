@@ -11,10 +11,12 @@
 
       <!-- Desktop Menu -->
       <div class="nav-menu" :class="{ 'active': isMobileMenuOpen }">
-        <a href="#about" class="nav-link" @click="closeMobileMenu">About Us</a>
-        <a href="#sdgs" class="nav-link" @click="closeMobileMenu">SDGs Impact</a>
-        <a href="#regions" class="nav-link" @click="closeMobileMenu">Our Regions</a>
-        <a href="#contact" class="nav-link" @click="closeMobileMenu">Contact</a>
+        <a href="#about" class="nav-link" :class="{ 'active': activeSection === 'about' }" @click="handleNavClick">About Us</a>
+        <a href="#why-matters" class="nav-link" :class="{ 'active': activeSection === 'why-matters' }" @click="handleNavClick">Why It Matters</a>
+        <a href="#chart" class="nav-link" :class="{ 'active': activeSection === 'chart' }" @click="handleNavClick">Data Insights</a>
+        <a href="#how-it-works" class="nav-link" :class="{ 'active': activeSection === 'how-it-works' }" @click="handleNavClick">How It Works</a>
+        <a href="#sdgs" class="nav-link" :class="{ 'active': activeSection === 'sdgs' }" @click="handleNavClick">SDGs Impact</a>
+        <a href="#regions" class="nav-link" :class="{ 'active': activeSection === 'regions' }" @click="handleNavClick">Our Regions</a>
       </div>
 
       <!-- CTA Button -->
@@ -37,9 +39,27 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
+const activeSection = ref('');
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
+  
+  // Update active section based on scroll position
+  const sections = ['about', 'why-matters', 'chart', 'how-it-works', 'sdgs', 'regions'];
+  const scrollPosition = window.scrollY + 100;
+  
+  for (const sectionId of sections) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        activeSection.value = sectionId;
+        break;
+      }
+    }
+  }
 };
 
 const toggleMobileMenu = () => {
@@ -48,6 +68,25 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
+};
+
+const handleNavClick = (event) => {
+  event.preventDefault();
+  closeMobileMenu();
+  
+  const targetId = event.currentTarget.getAttribute('href').substring(1);
+  const targetElement = document.getElementById(targetId);
+  
+  if (targetElement) {
+    const navbarHeight = 80; // Approximate navbar height
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
 };
 
 const handleSignup = () => {
@@ -129,17 +168,18 @@ onUnmounted(() => {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   transition: all 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .navbar.scrolled .nav-link {
@@ -167,6 +207,15 @@ onUnmounted(() => {
 
 .navbar.scrolled .nav-link:hover {
   color: #10b981;
+}
+
+.nav-link.active {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-actions {

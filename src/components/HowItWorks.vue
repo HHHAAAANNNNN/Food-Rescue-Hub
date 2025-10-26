@@ -1,5 +1,5 @@
 <template>
-  <div class="how-it-works-section">
+  <section id="how-it-works" class="how-it-works-section">
     <div class="section-container">
       <!-- Header -->
       <div class="section-header">
@@ -144,7 +144,7 @@
       </div>
 
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

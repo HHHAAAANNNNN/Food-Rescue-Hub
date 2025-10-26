@@ -147,7 +147,7 @@
     </section>
 
     <!-- Why It Matters Section -->
-    <section class="why-matters-section">
+    <section id="why-matters" class="why-matters-section">
       <div class="why-matters-container">
         <div class="section-intro">
           <span class="intro-badge">The Crisis We Face</span>
