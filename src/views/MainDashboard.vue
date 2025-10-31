@@ -376,40 +376,41 @@ const scrollRegions = (direction) => {
   background: linear-gradient(
     180deg,
     /* From hero image area - staying dark longer */
-    #111827 0%,
-    #111827 8%,
-    #121d28 12%,
-    #122229 16%,
-    #13272a 20%,
-    #132c2b 24%,
-    #14312c 28%,
-    #14362d 32%,
-    #153b2e 36%,
-    #16402f 40%,
-    #164530 44%,
-    #174a31 48%,
+    #111827 15%,
+    #122529 18%,
+    #12282a 21%,
+    #132b2b 24%,
+    #132e2c 27%,
+    #14312c 30%,
+    #14342d 33%,
+    #15372e 36%,
+    #153a2f 39%,
+    #163d30 42%,
+    #164031 45%,
+    #174332 48%,
     
     /* Smooth transition to emerald green */
-    #185033 52%,
-    #195535 55%,
-    #1a5b38 58%,
-    #1b613b 61%,
-    #1c673f 64%,
-    #0e8558 67%,
-    #109970 70%,
-    #10b981 73%,
+    #184633 51%,
+    #184a34 54%,
+    #194d35 57%,
+    #1a5136 60%,
+    #1a5437 63%,
+    #1b5838 66%,
+    #1b5b39 69%,
+    #1c5f3a 72%,
+    #1c623b 75%,
+    #1d663c 78%,
+    #1d693d 81%,
+    #1e6d3e 84%,
     
-    /* Stay at emerald green zone longer */
-    #10b981 76%,
-    
-    /* Fast transition back to dark - no light area visible */
-    #086146 78%,
-    #064936 80%,
-    #053d2e 82%,
-    #042f28 84%,
-    #032520 86%,
-    #021b18 88%,
-    #121212 90%,
+    /* Smooth transition back to dark */
+    #1a6540 86%,
+    #155d3e 88%,
+    #10553b 90%,
+    #0c4d38 92%,
+    #084535 94%,
+    #053d32 96%,
+    #03352e 98%,
     #121212 100%
   );
 }
@@ -423,7 +424,7 @@ const scrollRegions = (direction) => {
   max-width: 1400px;
   margin: 50px auto 0;
   align-items: center;
-  background: linear-gradient(135deg, rgba(18, 32, 43, 0.7) 0%, rgba(20, 46, 51, 0.8) 100%);
+  background: linear-gradient(135deg, #111827 0%, rgba(20, 46, 51, 0.8) 100%);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);

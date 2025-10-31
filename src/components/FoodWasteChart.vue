@@ -1,5 +1,5 @@
 <template>
-  <section id="chart" class="chart-section">
+  <section id="chart" class="chart-section" ref="chartSection">
     <!-- Hook Header Section -->
     <div class="hook-header">
       <div class="hook-badge">
@@ -82,7 +82,9 @@ Chart.register(
 
 const chartCanvas = ref(null);
 const selectedCountry = ref(null);
+const chartSection = ref(null);
 let chartInstance = null;
+let hasAnimated = ref(false);
 
 // Data ASEAN sorted by waste amount (highest to lowest)
 const aseanData = [
@@ -113,14 +115,15 @@ onMounted(() => {
   if (!chartCanvas.value) return;
 
   const ctx = chartCanvas.value.getContext('2d');
-
+  
+  // Create chart with initial data at 0
   chartInstance = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: aseanData.map(d => d.country),
       datasets: [{
         label: 'Food Waste (Million Tons/Year)',
-        data: aseanData.map(d => d.waste),
+        data: aseanData.map(() => 0), // Start with 0
         backgroundColor: aseanData.map(d => d.color),
         borderColor: aseanData.map(d => d.color),
         borderWidth: 2,
@@ -132,6 +135,9 @@ onMounted(() => {
       indexAxis: 'y', // Horizontal bars
       responsive: true,
       maintainAspectRatio: false,
+      animation: {
+        duration: 0 // Disable default animation, we'll control it manually
+      },
       onClick: (event, elements) => {
         if (elements.length > 0) {
           const index = elements[0].index;
@@ -229,7 +235,58 @@ onMounted(() => {
       }
     }
   });
+  
+  // Intersection Observer to trigger animation when chart becomes visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimated.value) {
+        hasAnimated.value = true;
+        animateChart();
+      }
+    });
+  }, {
+    threshold: 0.3 // Trigger when 30% of chart is visible
+  });
+  
+  // Observe the chart canvas
+  if (chartCanvas.value) {
+    observer.observe(chartCanvas.value);
+  }
+  
+  // Cleanup observer
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 });
+
+// Function to animate chart bars from 0 to actual values
+const animateChart = () => {
+  if (!chartInstance) return;
+  
+  const duration = 1500; // 1.5 seconds
+  const startTime = Date.now();
+  const targetData = aseanData.map(d => d.waste);
+  
+  const animate = () => {
+    const currentTime = Date.now();
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Easing function for smooth animation (easeOutCubic)
+    const easeProgress = 1 - Math.pow(1 - progress, 3);
+    
+    // Update chart data
+    chartInstance.data.datasets[0].data = targetData.map(value => value * easeProgress);
+    chartInstance.update('none'); // Update without animation
+    
+    // Continue animating if not finished
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  };
+  
+  animate();
+};
 
 onBeforeUnmount(() => {
   if (chartInstance) {
