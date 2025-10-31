@@ -377,35 +377,43 @@ const scrollRegions = (direction) => {
     180deg,
     /* From hero image area - staying dark longer */
     #111827 0%,
-    #111827 5%,
-    #12202b 10%,
-    #13272f 15%,
-    #142e33 20%,
-    #153537 25%,
-    #163c3b 30%,
-    #17433f 35%,
+    #111827 8%,
+    #121d28 12%,
+    #122229 16%,
+    #13272a 20%,
+    #132c2b 24%,
+    #14312c 28%,
+    #14362d 32%,
+    #153b2e 36%,
+    #16402f 40%,
+    #164530 44%,
+    #174a31 48%,
     
-    /* Gradual transition to emerald (not light emerald) */
-    #185443 40%,
-    #196147 45%,
-    #1a6d4b 50%,
-    #1b784f 55%,
-    #0d9668 60%,
-    #10b981 65%,
+    /* Smooth transition to emerald green */
+    #185033 52%,
+    #195535 55%,
+    #1a5b38 58%,
+    #1b613b 61%,
+    #1c673f 64%,
+    #0e8558 67%,
+    #109970 70%,
+    #10b981 73%,
     
-    /* Stay at emerald green zone */
-    #10b981 70%,
-    #0fa877 73%,
+    /* Stay at emerald green zone longer */
+    #10b981 76%,
+    #0fb57d 78%,
     
-    /* Gradual transition back to dark */
-    #0e956d 76%,
-    #0d8463 79%,
-    #0c7359 82%,
-    #0b624f 85%,
-    #0a5145 88%,
-    #09403b 91%,
-    #082f31 94%,
-    #071e27 97%,
+    /* Smooth gradual transition back to dark */
+    #0ea976 80%,
+    #0d9d6e 82%,
+    #0c9166 84%,
+    #0b855e 86%,
+    #0a7956 88%,
+    #096d4e 90%,
+    #086146 92%,
+    #07553e 94%,
+    #064936 96%,
+    #053d2e 98%,
     #121212 100%
   );
 }
@@ -1052,7 +1060,7 @@ const scrollRegions = (direction) => {
 }
 
 .region-list::-webkit-scrollbar-track {
-  background: #f3f4f6;
+  background: rgba(31, 41, 55, 0.5);
   border-radius: 10px;
 }
 
@@ -1114,7 +1122,7 @@ const scrollRegions = (direction) => {
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid #e5e7eb;
+  border: 4px solid rgba(31, 41, 55, 0.3);
   border-top-color: #10b981;
   border-radius: 50%;
   animation: spin 1s linear infinite;
