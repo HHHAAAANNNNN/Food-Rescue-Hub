@@ -375,32 +375,36 @@ const scrollRegions = (direction) => {
   min-height: 100vh;
   background: linear-gradient(
     180deg,
-    /* From hero image area - dark */
+    /* From hero image area - dark to emerald smooth transition */
     #111827 0%,
-    #1a2332 8%,
-    #1f2937 15%,
+    #13202d 5%,
+    #152833 10%,
+    #17313a 15%,
+    #1a3a41 20%,
+    #1d4348 25%,
+    #204d4f 30%,
+    #265a5a 35%,
+    #2e6764 40%,
+    #3a766e 45%,
+    #4a8678 50%,
+    #5d9682 55%,
+    #73a88c 58%,
+    #8bb997 61%,
+    #a5caa3 64%,
+    #bedbb0 67%,
+    #d1f0c0 70%,
+    #d1fae5 73%,
     
-    /* Transition to light emerald */
-    #374151 25%,
-    #4b5563 30%,
-    #6b7280 35%,
-    #9ca3af 40%,
-    #d1fae5 48%,
-    #a7f3d0 52%,
-    #6ee7b7 56%,
-    #34d399 60%,
-    #10b981 64%,
-    
-    /* Back to dark */
-    #059669 68%,
-    #047857 72%,
-    #065f46 76%,
-    #064e3b 80%,
-    #033d2a 85%,
-    #022419 90%,
-    #011a11 95%,
-    
-    /* Footer dark */
+    /* Emerald peak - stay longer */
+    #c5f4dc 76%,
+    #b0e8cd 79%,
+    #96d9ba 82%,
+    #77c7a3 85%,
+    #59b48b 88%,
+    #3d9e73 91%,
+    #28865e 94%,
+    #196c4a 96%,
+    #0f5138 98%,
     #121212 100%
   );
 }
