@@ -1052,7 +1052,7 @@ const scrollRegions = (direction) => {
   scroll-snap-type: x mandatory;
   padding: 1rem 0;
   scrollbar-width: thin;
-  scrollbar-color: #10b981 #f3f4f6;
+  scrollbar-color: #2596be;
 }
 
 .region-list::-webkit-scrollbar {
