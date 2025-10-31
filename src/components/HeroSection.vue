@@ -1,6 +1,6 @@
 <template>
   <section class="hero-main">
-    <div class="hero-background">
+    <div class="hero-background" :style="{ backgroundImage: `url(${heroImage})` }">
       <div class="hero-overlay"></div>
     </div>
     
@@ -51,6 +51,7 @@
 
 <script setup>
 import { useLanguage } from '@/composables/useLanguage';
+import heroImage from '@/assets/NourishHubActor.png';
 
 const { t } = useLanguage();
 
@@ -82,7 +83,6 @@ const handleSignup = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('@/assets/NourishHubActor.png');
   background-size: cover;
   background-position: center 28%;
   background-repeat: no-repeat;
