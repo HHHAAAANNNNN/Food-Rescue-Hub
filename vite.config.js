@@ -15,4 +15,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // GitHub Pages configuration
+  base: '/Food-Rescue-Hub/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    // Optimize build with esbuild (default)
+    minify: 'esbuild',
+    sourcemap: false,
+  },
 })
