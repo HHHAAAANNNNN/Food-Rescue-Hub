@@ -94,11 +94,12 @@ defineProps({
   right: -6px;
   font-size: 0.625rem;
   font-weight: 700;
-  background: white;
-  color: inherit;
+  background: rgba(31, 41, 55, 0.95);
+  color: #d1fae5;
   padding: 2px 6px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .sdg-content {

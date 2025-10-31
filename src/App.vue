@@ -78,12 +78,12 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
 
 /* Header */
 .app-header {
-  background: white;
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(17, 24, 39, 0.95);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {

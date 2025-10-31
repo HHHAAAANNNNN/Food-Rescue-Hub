@@ -165,16 +165,19 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
+  background: rgba(17, 24, 39, 0.3);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   padding: 1rem 0;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(17, 24, 39, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .nav-container {
@@ -212,7 +215,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled .brand-name {
-  color: #111827;
+  color: #d1fae5;
 }
 
 .nav-menu {
@@ -222,7 +225,7 @@ onUnmounted(() => {
 }
 
 .nav-link {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
@@ -233,7 +236,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled .nav-link {
-  color: #374151;
+  color: #d1d5db;
 }
 
 .nav-link::after {
@@ -283,8 +286,8 @@ onUnmounted(() => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 8px;
   color: white;
   font-weight: 600;
@@ -294,8 +297,8 @@ onUnmounted(() => {
 }
 
 .btn-language:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
 }
 
 .navbar.scrolled .btn-language {
@@ -331,9 +334,10 @@ onUnmounted(() => {
   top: calc(100% + 0.5rem);
   right: 0;
   min-width: 180px;
-  background: white;
+  background: rgba(31, 41, 55, 0.98);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   z-index: 1000;
   animation: slideDown 0.3s ease;
@@ -356,9 +360,9 @@ onUnmounted(() => {
   gap: 0.75rem;
   width: 100%;
   padding: 0.75rem 1rem;
-  background: white;
+  background: transparent;
   border: none;
-  color: #374151;
+  color: #d1d5db;
   font-weight: 500;
   font-size: 0.875rem;
   cursor: pointer;
@@ -367,11 +371,12 @@ onUnmounted(() => {
 }
 
 .lang-option:hover {
-  background: #f3f4f6;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
 }
 
 .lang-option.active {
-  background: #ecfdf5;
+  background: rgba(16, 185, 129, 0.2);
   color: #10b981;
 }
 
@@ -390,8 +395,8 @@ onUnmounted(() => {
 
 .btn-signup {
   padding: 0.75rem 1.75rem;
-  background: white;
-  color: #10b981;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
   border: none;
   border-radius: 50px;
   font-weight: 600;
@@ -402,7 +407,7 @@ onUnmounted(() => {
 }
 
 .btn-signup:hover {
-  background: #10b981;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
@@ -432,13 +437,13 @@ onUnmounted(() => {
   display: block;
   width: 25px;
   height: 2px;
-  background: white;
+  background: #d1d5db;
   position: relative;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .hamburger {
-  background: #111827;
+  background: #d1fae5;
 }
 
 .hamburger::before,
@@ -447,13 +452,13 @@ onUnmounted(() => {
   position: absolute;
   width: 25px;
   height: 2px;
-  background: white;
+  background: #d1d5db;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .hamburger::before,
 .navbar.scrolled .hamburger::after {
-  background: #111827;
+  background: #d1fae5;
 }
 
 .hamburger::before {
@@ -495,13 +500,14 @@ onUnmounted(() => {
     width: 70%;
     max-width: 300px;
     height: 100vh;
-    background: white;
+    background: rgba(17, 24, 39, 0.98);
     flex-direction: column;
     align-items: flex-start;
     padding: 5rem 2rem 2rem;
     gap: 1.5rem;
     transition: right 0.3s ease;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(16, 185, 129, 0.3);
   }
 
   .nav-menu.active {
@@ -509,7 +515,7 @@ onUnmounted(() => {
   }
 
   .nav-menu .nav-link {
-    color: #374151;
+    color: #d1d5db;
     font-size: 1.1rem;
     width: 100%;
     padding: 0.75rem 0;

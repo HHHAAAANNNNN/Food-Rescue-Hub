@@ -150,24 +150,24 @@ const handleSignup = () => {
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 3rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(16, 185, 129, 0.2);
   backdrop-filter: blur(10px);
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(16, 185, 129, 0.8);
   border-radius: 50px;
   font-size: 1.125rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  background: white;
-  color: #065f46;
-  border-color: white;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-color: #10b981;
 }
 
 .btn-primary svg {
@@ -184,10 +184,10 @@ const handleSignup = () => {
   align-items: center;
   gap: 3rem;
   padding: 2rem 3rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(31, 41, 55, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -216,7 +216,7 @@ const handleSignup = () => {
 .stat-divider {
   width: 1px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(16, 185, 129, 0.4);
 }
 
 .hero-gradient-blend {

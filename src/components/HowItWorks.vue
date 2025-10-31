@@ -325,11 +325,11 @@ onUnmounted(() => {
 
 /* Step Card */
 .step-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(31, 41, 55, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2rem;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.2);
   position: relative;
   transition: all 0.3s ease;
   display: grid;
@@ -340,7 +340,7 @@ onUnmounted(() => {
 
 .step-card:hover {
   transform: translateX(8px);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(31, 41, 55, 0.8);
   border-color: rgba(16, 185, 129, 0.4);
   box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2);
 }

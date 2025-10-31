@@ -297,12 +297,12 @@ onBeforeUnmount(() => {
 }
 
 .chart-container {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(31, 41, 55, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   padding: 3rem;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1);
 }
 
 .chart-header {

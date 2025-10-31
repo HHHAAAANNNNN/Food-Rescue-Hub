@@ -374,27 +374,33 @@ const scrollRegions = (direction) => {
 .main-dashboard {
   min-height: 100vh;
   background: linear-gradient(
-    180deg, 
+    180deg,
+    /* From hero image area - dark */
     #111827 0%,
-    #1f2937 10%,
-    #374151 15%,
-    #4b5563 18%,
-    #6b7280 22%,
-    #9ca3af 26%,
-    #d1d5db 30%,
-    #e5e7eb 35%,
-    #f3f4f6 40%,
-    #ffffff 50%,
-    #ecfdf5 60%, 
-    #d1fae5 65%, 
-    #10b981 73%,
-    #059669 78%,
-    #047857 83%,
-    #065f46 88%,
-    #064e3b 92%,
-    #033d2a 95%,
-    #022419 97%,
-    #011a11 99%,
+    #1a2332 8%,
+    #1f2937 15%,
+    
+    /* Transition to light emerald */
+    #374151 25%,
+    #4b5563 30%,
+    #6b7280 35%,
+    #9ca3af 40%,
+    #d1fae5 48%,
+    #a7f3d0 52%,
+    #6ee7b7 56%,
+    #34d399 60%,
+    #10b981 64%,
+    
+    /* Back to dark */
+    #059669 68%,
+    #047857 72%,
+    #065f46 76%,
+    #064e3b 80%,
+    #033d2a 85%,
+    #022419 90%,
+    #011a11 95%,
+    
+    /* Footer dark */
     #121212 100%
   );
 }
@@ -765,7 +771,7 @@ const scrollRegions = (direction) => {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(16, 185, 129, 0.2);
   border-radius: 50%;
   margin: 0 auto 1.5rem;
 }
@@ -829,21 +835,21 @@ const scrollRegions = (direction) => {
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 3rem;
-  background: white;
-  color: #065f46;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
   border: none;
   border-radius: 50px;
   font-size: 1.125rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
 }
 
 .cta-button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-  background: #f0fdf4;
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.6);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 .cta-button svg {
@@ -1057,15 +1063,16 @@ const scrollRegions = (direction) => {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: rgba(31, 41, 55, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #10b981;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-btn:hover {
@@ -1090,7 +1097,7 @@ const scrollRegions = (direction) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(17, 24, 39, 0.95);
   display: flex;
   flex-direction: column;
   align-items: center;
