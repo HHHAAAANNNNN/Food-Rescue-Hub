@@ -23,14 +23,14 @@ defineProps({
 
 <style scoped>
 .sdg-card {
-  background: white;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
   border-radius: 20px;
   padding: 2rem;
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 2px solid rgba(16, 185, 129, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -109,13 +109,13 @@ defineProps({
 .sdg-content h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: #e5e7eb;
   margin: 0 0 0.75rem;
   line-height: 1.3;
 }
 
 .sdg-content p {
-  color: #4b5563;
+  color: #d1d5db;
   line-height: 1.6;
   margin: 0;
   font-size: 0.9375rem;

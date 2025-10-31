@@ -43,15 +43,15 @@ defineProps({ region: Object });
 
 <style scoped>
 .region-card {
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 16px;
   padding: 1.5rem;
   min-width: 280px;
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
   scroll-snap-align: start;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -102,13 +102,13 @@ defineProps({ region: Object });
 .region-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #111827;
+  color: #e5e7eb;
   margin: 0;
   line-height: 1.3;
 }
 
 .description {
-  color: #6b7280;
+  color: #d1d5db;
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0.75rem 0;
@@ -121,7 +121,7 @@ defineProps({ region: Object });
   color: #10b981;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  background: #ecfdf5;
+  background: rgba(16, 185, 129, 0.15);
   border-radius: 8px;
 }
 
@@ -140,7 +140,7 @@ defineProps({ region: Object });
   gap: 0.75rem;
   margin: 1rem 0;
   padding: 1rem;
-  background: #f9fafb;
+  background: rgba(55, 65, 81, 0.5);
   border-radius: 10px;
 }
 
@@ -160,7 +160,7 @@ defineProps({ region: Object });
 
 .stat-label {
   font-size: 0.75rem;
-  color: #6b7280;
+  color: #9ca3af;
   margin-top: 0.25rem;
 }
 

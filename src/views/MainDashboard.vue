@@ -408,10 +408,11 @@ const scrollRegions = (direction) => {
   max-width: 1400px;
   margin: 50px auto 0;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.98) 100%);
   backdrop-filter: blur(10px);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   position: relative;
   z-index: 10;
 }
@@ -451,7 +452,7 @@ const scrollRegions = (direction) => {
   font-weight: 800;
   margin: 0 0 1rem;
   line-height: 1.2;
-  background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #059669 100%);
+  background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -464,7 +465,7 @@ const scrollRegions = (direction) => {
   left: 0;
   top: 0;
   z-index: -1;
-  background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #059669 100%);
+  background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -474,7 +475,7 @@ const scrollRegions = (direction) => {
 
 .hero-description {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: #d1d5db;
   line-height: 1.8;
   margin: 0 0 2rem;
 }
@@ -484,12 +485,12 @@ const scrollRegions = (direction) => {
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.2) 100%);
   border-left: 4px solid #10b981;
   border-radius: 12px;
   margin: 2rem 0;
   font-style: italic;
-  color: #065f46;
+  color: #d1fae5;
   font-weight: 500;
 }
 
@@ -511,10 +512,10 @@ const scrollRegions = (direction) => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: rgba(55, 65, 81, 0.5);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 10px;
-  color: #374151;
+  color: #d1d5db;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
@@ -549,31 +550,32 @@ const scrollRegions = (direction) => {
   align-items: center;
   gap: 0.5rem;
   padding: 1.25rem 1.5rem;
-  background: white;
+  background: rgba(31, 41, 55, 0.95);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   color: #10b981;
   font-weight: 600;
   font-size: 0.875rem;
   animation: float 3s ease-in-out infinite;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid rgba(16, 185, 129, 0.3);
 }
 
 .floating-card:hover {
   transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
   border-color: #10b981;
   z-index: 10;
 }
 
 .floating-card.sdg-theme {
-  background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.98) 100%);
+  border: 2px solid rgba(16, 185, 129, 0.3);
 }
 
 .floating-card.impact-theme {
-  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.2) 100%);
   border: 2px solid #10b981;
 }
 
@@ -718,12 +720,12 @@ const scrollRegions = (direction) => {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(31, 41, 55, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2rem;
   text-align: center;
-  border: 2px solid transparent;
+  border: 2px solid rgba(16, 185, 129, 0.2);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -752,9 +754,9 @@ const scrollRegions = (direction) => {
 
 .stat-card:hover {
   transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(31, 41, 55, 0.8);
+  border-color: #10b981;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
 }
 
 .stat-icon {
