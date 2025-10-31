@@ -7,11 +7,10 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-title">
-          Save Good Food From<br>
-          Going To Waste
+          {{ t('heroMain.title') }}
         </h1>
         <p class="hero-subtitle">
-          Join the movement to rescue surplus food and build sustainable communities across Indonesia
+          {{ t('heroMain.subtitle') }}
         </p>
         <div class="hero-cta">
           <button class="btn-primary" @click="handleSignup">
@@ -21,7 +20,7 @@
               <line x1="19" x2="19" y1="8" y2="14"></line>
               <line x1="22" x2="16" y1="11" y2="11"></line>
             </svg>
-            Sign Up Your Community
+            {{ t('heroMain.button') }}
           </button>
         </div>
         
@@ -29,17 +28,17 @@
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-number">1,200+</div>
-            <div class="stat-label">Families Helped</div>
+            <div class="stat-label">{{ t('heroMain.familiesHelped') }}</div>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
             <div class="stat-number">5,400kg</div>
-            <div class="stat-label">Food Rescued</div>
+            <div class="stat-label">{{ t('heroMain.foodRescued') }}</div>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
             <div class="stat-number">15+</div>
-            <div class="stat-label">Active Regions</div>
+            <div class="stat-label">{{ t('heroMain.activeRegions') }}</div>
           </div>
         </div>
       </div>
@@ -51,6 +50,10 @@
 </template>
 
 <script setup>
+import { useLanguage } from '@/composables/useLanguage';
+
+const { t } = useLanguage();
+
 const handleSignup = () => {
   // Scroll to contact section or show signup form
   const contactSection = document.querySelector('#contact');

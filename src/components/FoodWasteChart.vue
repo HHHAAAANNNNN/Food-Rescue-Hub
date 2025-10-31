@@ -8,32 +8,30 @@
           <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
           <line x1="12" y1="22.08" x2="12" y2="12"></line>
         </svg>
-        <span>Regional Data Insights</span>
+        <span>{{ t('chart.badge') }}</span>
       </div>
       <h2 class="hook-title">
-        Siapa Penyumbang Terbesar Limbah Makanan di ASEAN?
+        {{ t('chart.title') }}
       </h2>
       <p class="hook-description">
-        Dari 10 negara ASEAN, distribusi food waste sangat tidak merata. <br>
-        <strong>Satu negara berkontribusi hampir setengah dari total limbah makanan regional</strong>. <br> 
-        Visualisasi interaktif di bawah mengungkap proporsi sebenarnya dari setiap negara.
+        {{ t('chart.description1') }} <br>
+        <span v-html="t('chart.description2')"></span> <br> 
+        {{ t('chart.description3') }}
       </p>
     </div>
 
     <div class="chart-container">
       <div class="chart-header">
         <div class="chart-title-group">
-          <h3 class="chart-title">Ranking by Total Food Waste</h3>
+          <h3 class="chart-title">{{ t('chart.chartTitle') }}</h3>
           <p class="chart-subtitle" :key="selectedCountry">
             <template v-if="selectedCountry">
-              <strong>{{ selectedCountry }}</strong> menghasilkan <strong>{{ getCountryData(selectedCountry)?.waste }} juta ton</strong> 
-              (<strong>{{ getPercentage(getCountryData(selectedCountry)?.waste) }}%</strong> dari total ASEAN) 
-              dengan <strong>{{ getCountryData(selectedCountry)?.perCapita }} kg/kapita</strong> per tahun
+              <strong>{{ selectedCountry }}</strong> {{ t('chart.generates') }} <strong>{{ getCountryData(selectedCountry)?.waste }} {{ t('chart.millionTons') }}</strong> 
+              (<strong>{{ getPercentage(getCountryData(selectedCountry)?.waste) }}%</strong> {{ t('chart.ofASEAN') }}) 
+              {{ t('chart.with') }} <strong>{{ getCountryData(selectedCountry)?.perCapita }} {{ t('chart.perCapita') }}</strong>
             </template>
             <template v-else>
-              Total <strong>{{ totalWaste.toFixed(2) }} juta ton</strong> food waste di ASEAN. 
-              Indonesia berkontribusi <strong>{{ getPercentage(20.93) }}%</strong>. 
-              <br>Klik bar untuk detail negara.
+              {{ t('chart.chartSubtitle') }}
             </template>
           </p>
         </div>
@@ -57,6 +55,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { useLanguage } from '@/composables/useLanguage';
 import {
   Chart,
   BarController,
@@ -67,6 +66,8 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
+
+const { t } = useLanguage();
 
 // Register Chart.js components
 Chart.register(

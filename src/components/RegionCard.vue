@@ -20,20 +20,24 @@
     <div class="stats-preview">
       <div class="stat-item">
         <span class="stat-value">{{ region.stats.donations }}</span>
-        <span class="stat-label">Donasi (kg)</span>
+        <span class="stat-label">{{ t('regionCard.donations') }}</span>
       </div>
       <div class="stat-item">
         <span class="stat-value">{{ region.stats.receivers }}</span>
-        <span class="stat-label">Penerima</span>
+        <span class="stat-label">{{ t('regionCard.receivers') }}</span>
       </div>
     </div>
     <div class="card-footer">
-      <span class="view-detail">Lihat Detail →</span>
+      <span class="view-detail">{{ t('regionCard.viewDetail') }}</span>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useLanguage } from '@/composables/useLanguage';
+
+const { t } = useLanguage();
+
 defineProps({ region: Object });
 </script>
 

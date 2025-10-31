@@ -9,11 +9,11 @@
             <path d="M12 16v-4"></path>
             <path d="M12 8h.01"></path>
           </svg>
-          <span>Our Solution</span>
+          <span>{{ t('howItWorks.badge') }}</span>
         </span>
-        <h2 class="section-title">Bagaimana NourishHub Bekerja?</h2>
+        <h2 class="section-title">{{ t('howItWorks.title') }}</h2>
         <p class="section-description">
-          Sistem ekosistem pangan berkelanjutan dengan 4 tahapan terintegrasi
+          {{ t('howItWorks.subtitle') }}
         </p>
       </div>
 
@@ -31,9 +31,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="step-title">Pengumpulan</h3>
+              <h3 class="step-title">{{ t('howItWorks.step1Title') }}</h3>
               <p class="step-description">
-                Surplus food dari rumah tangga dan F&B Sekitar
+                {{ t('howItWorks.step1Desc') }}
               </p>
               <div class="step-tags">
                 <span class="tag">Household</span>
@@ -63,9 +63,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="step-title">Sortir & Kontrol</h3>
+              <h3 class="step-title">{{ t('howItWorks.step2Title') }}</h3>
               <p class="step-description">
-                Sortir & kontrol kualitas di Hub Komunitas
+                {{ t('howItWorks.step2Desc') }}
               </p>
               <div class="step-tags">
                 <span class="tag">Quality Check</span>
@@ -99,9 +99,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="step-title">Pengolahan</h3>
+              <h3 class="step-title">{{ t('howItWorks.step3Title') }}</h3>
               <p class="step-description">
-                Pengolahan sisa menjadi produk layak distribusi maupun produk siap jual kembali
+                {{ t('howItWorks.step3Desc') }}
               </p>
               <div class="step-tags">
                 <span class="tag">Processing</span>
@@ -130,13 +130,13 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="step-title">Distribusi</h3>
+              <h3 class="step-title">{{ t('howItWorks.step4Title') }}</h3>
               <p class="step-description">
-                Distribusi ke keluarga pra-sejahtera via Data RT/RW maupun ke Pihak Berkebutuhan lainnya
+                {{ t('howItWorks.step4Desc') }}
               </p>
               <div class="step-tags">
-                <span class="tag">RT/RW</span>
-                <span class="tag">Communities</span>
+                <span class="tag">{{ t('howItWorks.rtRw') }}</span>
+                <span class="tag">{{ t('howItWorks.communities') }}</span>
               </div>
             </div>
           </div>
@@ -149,6 +149,9 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
+import { useLanguage } from '@/composables/useLanguage';
+
+const { t } = useLanguage();
 
 let observer = null;
 

@@ -16,7 +16,7 @@
               <path d="M2 17l10 5 10-5"></path>
               <path d="M2 12l10 5 10-5"></path>
             </svg>
-            <span>Social Enterprise Platform</span>
+            <span>{{ t('hero.badge1') }}</span>
           </div>
           <div class="hero-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -25,7 +25,7 @@
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
-            <span>Empowering Local Communities</span>
+            <span>{{ t('hero.badge2') }}</span>
           </div>
           <div class="hero-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -33,25 +33,25 @@
               <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
               <path d="M12 3v6"></path>
             </svg>
-            <span>Food Waste Management Program</span>
+            <span>{{ t('hero.badge3') }}</span>
           </div>
           <div class="hero-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M12 6v6l4 2"></path>
             </svg>
-            <span>ASEAN Sustainable Initiative</span>
+            <span>{{ t('hero.badge4') }}</span>
           </div>
         </div>
-        <h1 class="hero-title">{{ profile.title }}</h1>
-        <p class="hero-description">{{ profile.description }}</p>
+        <h1 class="hero-title">{{ t('profile.title') }}</h1>
+        <p class="hero-description">{{ t('profile.description') }}</p>
         <blockquote class="hero-vision">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M12 16v-4"></path>
             <path d="M12 8h.01"></path>
           </svg>
-          <span>{{ profile.vision }}</span>
+          <span>{{ t('profile.vision') }}</span>
         </blockquote>
         <div id="contact" class="hero-contact">
           <a :href="`mailto:${profile.contact?.email}`" class="contact-link">
@@ -89,7 +89,7 @@
             <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
             <path d="M12 3v6"></path>
           </svg>
-          <span>Zero Hunger</span>
+          <span>{{ t('hero.floatingCard1') }}</span>
         </div>
 
         <!-- SDG 12: Responsible Consumption -->
@@ -102,7 +102,7 @@
             <line x1="10" x2="10" y1="11" y2="17"></line>
             <line x1="14" x2="14" y1="11" y2="17"></line>
           </svg>
-          <span>Reduce Waste</span>
+          <span>{{ t('hero.floatingCard2') }}</span>
         </div>
 
         <!-- SDG 11: Sustainable Cities -->
@@ -118,7 +118,7 @@
             <path d="M14 16h1"></path>
             <path d="M6 3h12a2 2 0 0 1 2 2v16H4V5a2 2 0 0 1 2-2z"></path>
           </svg>
-          <span>Green Cities</span>
+          <span>{{ t('hero.floatingCard3') }}</span>
         </div>
 
         <!-- SDG 8: Decent Work -->
@@ -130,7 +130,7 @@
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <span>Fair Work</span>
+          <span>{{ t('hero.floatingCard4') }}</span>
         </div>
 
         <!-- SDG 17: Partnerships -->
@@ -141,7 +141,7 @@
             <path d="M2 17l10 5 10-5"></path>
             <path d="M2 12l10 5 10-5"></path>
           </svg>
-          <span>Partnership</span>
+          <span>{{ t('hero.floatingCard5') }}</span>
         </div>
       </div>
     </section>
@@ -150,18 +150,18 @@
     <section id="why-matters" class="why-matters-section">
       <div class="why-matters-container">
         <div class="section-intro">
-          <span class="intro-badge">The Crisis We Face</span>
-          <h2 class="section-title">Mengapa Kontribusi Anda Sangat Penting?</h2>
+          <span class="intro-badge">{{ t('whyMatters.badge') }}</span>
+          <h2 class="section-title">{{ t('whyMatters.title') }}</h2>
           <p class="section-subtitle">
-            Di tengah melimpahnya produksi pangan, jutaan orang masih kelaparan.
+            {{ t('whyMatters.subtitle1') }}
           </p>
 
           <p class="section-subtitle">  
-            Ini bukan masalah kekurangan—ini masalah distribusi yang tidak merata.
+            {{ t('whyMatters.subtitle2') }}
           </p>
           
           <p class="section-hook">
-            💡 Mari kita lihat fakta-fakta mengejutkan di balik krisis pangan Indonesia dan ASEAN:
+            {{ t('whyMatters.hook') }}
           </p>
         </div>
 
@@ -177,7 +177,7 @@
               </svg>
             </div>
             <div class="stat-value">20 Juta Ton</div>
-            <div class="stat-label">Limbah makanan per tahun di Indonesia</div>
+            <div class="stat-label">{{ t('whyMatters.stat1Label') }}</div>
             <div class="stat-source">UNEP Food Waste Index 2021</div>
           </div>
 
@@ -190,7 +190,7 @@
               </svg>
             </div>
             <div class="stat-value">4-5% PDB</div>
-            <div class="stat-label">Kerugian ekonomi tahunan akibat food waste</div>
+            <div class="stat-label">{{ t('whyMatters.stat2Label') }}</div>
             <div class="stat-source">Waluyo, 2023</div>
           </div>
 
@@ -203,8 +203,8 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </div>
-            <div class="stat-value">Jutaan Orang</div>
-            <div class="stat-label">Belum akses makanan layak di ASEAN</div>
+            <div class="stat-value">{{ t('whyMatters.stat3Value') }}</div>
+            <div class="stat-label">{{ t('whyMatters.stat3Label') }}</div>
             <div class="stat-source">Purwanti, 2022</div>
           </div>
         </div>
@@ -226,12 +226,12 @@
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             <path d="M2 12h20"></path>
           </svg>
-          <span>Global Impact Alignment</span>
+          <span>{{ t('sdgs.badge') }}</span>
         </span>
-        <h2>Sustainable Development Goals</h2>
-        <p>NourishHub berkontribusi langsung terhadap pencapaian SDGs berikut:</p>
+        <h2>{{ t('sdgs.title') }}</h2>
+        <p>{{ t('sdgs.description') }}</p>
         <p class="sdgs-hook">
-          🌍 Setiap aksi lokal menciptakan dampak global. Inilah kontribusi kami untuk dunia yang lebih baik:
+          {{ t('sdgs.hook') }}
         </p>
       </div>
       <div class="sdgs-grid">
@@ -252,17 +252,17 @@
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span>Community Hubs</span>
+            <span>{{ t('regions.badge') }}</span>
           </span>
-          <h2>Daerah Kontributor Komunitas</h2>
-          <p>Jelajahi berbagai wilayah yang aktif berkontribusi dalam ekosistem pangan berkelanjutan</p>
+          <h2>{{ t('regions.title') }}</h2>
+          <p>{{ t('regions.description') }}</p>
           <p class="region-hook">
-            📍 Dari RT/RW hingga kota besar—gerakan ini tumbuh di mana-mana. Lihat komunitas yang sudah bergabung:
+            {{ t('regions.hook') }}
           </p>
         </div>
         <div class="region-count">
           <span class="count">{{ regions.length }}</span>
-          <span class="label">Wilayah Aktif</span>
+          <span class="label">{{ t('regions.activeRegions') }}</span>
         </div>
       </div>
       <div class="region-list-wrapper">
@@ -291,14 +291,10 @@
     <section class="cta-section">
       <div class="cta-container">
         <div class="cta-box">
-          <h3>Setiap Kontribusi Menciptakan Dampak Nyata</h3>
-          <p>
-            NourishHub bukan sekadar mengurangi limbah makanan—kami membangun 
-            <strong>ekosistem pangan berkelanjutan</strong> yang memperkuat ketahanan 
-            sosial-ekonomi masyarakat di tingkat akar rumput.
-          </p>
+          <h3>{{ t('cta.title') }}</h3>
+          <p v-html="t('cta.description')"></p>
           <button class="cta-button" @click="scrollToContact">
-            Bergabung dengan Gerakan Ini
+            {{ t('cta.button') }}
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
@@ -311,7 +307,7 @@
     <!-- Loading State -->
     <div v-if="isLoading" class="loading-overlay">
       <div class="spinner"></div>
-      <p>Memuat data dashboard...</p>
+      <p>{{ t('loading.text') }}</p>
     </div>
   </div>
 </template>
@@ -326,7 +322,9 @@ import HeroSection from "@/components/HeroSection.vue";
 import FoodWasteChart from "@/components/FoodWasteChart.vue";
 import HowItWorks from "@/components/HowItWorks.vue";
 import { useRouter } from "vue-router";
+import { useLanguage } from "@/composables/useLanguage";
 
+const { t } = useLanguage();
 const router = useRouter();
 const profile = ref({});
 const regions = ref([]);

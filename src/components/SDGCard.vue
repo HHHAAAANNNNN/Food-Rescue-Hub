@@ -2,13 +2,17 @@
   <div :class="['sdg-card', `sdg-${sdg.number}`]">
     <div class="sdg-number">{{ sdg.number }}</div>
     <div class="sdg-content">
-      <h3>{{ sdg.title }}</h3>
-      <p>{{ sdg.description }}</p>
+      <h3>{{ t(`sdgCards.sdg${sdg.number}.title`) }}</h3>
+      <p>{{ t(`sdgCards.sdg${sdg.number}.description`) }}</p>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useLanguage } from '@/composables/useLanguage';
+
+const { t } = useLanguage();
+
 defineProps({
   sdg: {
     type: Object,

@@ -11,18 +11,44 @@
 
       <!-- Desktop Menu -->
       <div class="nav-menu" :class="{ 'active': isMobileMenuOpen }">
-        <a href="#about" class="nav-link" :class="{ 'active': activeSection === 'about' }" @click="handleNavClick">About Us</a>
-        <a href="#why-matters" class="nav-link" :class="{ 'active': activeSection === 'why-matters' }" @click="handleNavClick">Why It Matters</a>
-        <a href="#chart" class="nav-link" :class="{ 'active': activeSection === 'chart' }" @click="handleNavClick">Data Insights</a>
-        <a href="#how-it-works" class="nav-link" :class="{ 'active': activeSection === 'how-it-works' }" @click="handleNavClick">How It Works</a>
-        <a href="#sdgs" class="nav-link" :class="{ 'active': activeSection === 'sdgs' }" @click="handleNavClick">SDGs Impact</a>
-        <a href="#regions" class="nav-link" :class="{ 'active': activeSection === 'regions' }" @click="handleNavClick">Our Regions</a>
+        <a href="#about" class="nav-link" :class="{ 'active': activeSection === 'about' }" @click="handleNavClick">{{ t('navbar.aboutUs') }}</a>
+        <a href="#why-matters" class="nav-link" :class="{ 'active': activeSection === 'why-matters' }" @click="handleNavClick">{{ t('navbar.whyMatters') }}</a>
+        <a href="#chart" class="nav-link" :class="{ 'active': activeSection === 'chart' }" @click="handleNavClick">{{ t('navbar.dataInsights') }}</a>
+        <a href="#how-it-works" class="nav-link" :class="{ 'active': activeSection === 'how-it-works' }" @click="handleNavClick">{{ t('navbar.howItWorks') }}</a>
+        <a href="#sdgs" class="nav-link" :class="{ 'active': activeSection === 'sdgs' }" @click="handleNavClick">{{ t('navbar.sdgsImpact') }}</a>
+        <a href="#regions" class="nav-link" :class="{ 'active': activeSection === 'regions' }" @click="handleNavClick">{{ t('navbar.ourRegions') }}</a>
       </div>
 
       <!-- CTA Button -->
       <div class="nav-actions">
+        <!-- Language Selector -->
+        <div class="language-selector" @click="toggleLanguageDropdown">
+          <button class="btn-language">
+            <span class="flag">{{ getCurrentLanguage.flag }}</span>
+            <span class="lang-code">{{ getCurrentLanguage.code.toUpperCase() }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron" :class="{ 'open': isLanguageDropdownOpen }">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="language-dropdown" v-if="isLanguageDropdownOpen">
+            <button 
+              v-for="lang in languages" 
+              :key="lang.code"
+              class="lang-option"
+              :class="{ 'active': currentLanguage === lang.code }"
+              @click.stop="selectLanguage(lang.code)"
+            >
+              <span class="flag">{{ lang.flag }}</span>
+              <span class="lang-name">{{ lang.name }}</span>
+              <svg v-if="currentLanguage === lang.code" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
         <button class="btn-signup" @click="handleSignup">
-          Sign Up Community
+          {{ t('navbar.signUpCommunity') }}
         </button>
       </div>
 
@@ -36,10 +62,14 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useLanguage } from '@/composables/useLanguage';
+
+const { currentLanguage, languages, setLanguage, getCurrentLanguage, t, initLanguage } = useLanguage();
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
 const activeSection = ref('');
+const isLanguageDropdownOpen = ref(false);
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
@@ -99,12 +129,32 @@ const handleSignup = () => {
   }
 };
 
+const toggleLanguageDropdown = () => {
+  isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value;
+};
+
+const selectLanguage = (langCode) => {
+  setLanguage(langCode);
+  isLanguageDropdownOpen.value = false;
+};
+
+// Close language dropdown when clicking outside
+const handleClickOutside = (event) => {
+  const languageSelector = document.querySelector('.language-selector');
+  if (languageSelector && !languageSelector.contains(event.target)) {
+    isLanguageDropdownOpen.value = false;
+  }
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  document.addEventListener('click', handleClickOutside);
+  initLanguage();
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  document.removeEventListener('click', handleClickOutside);
 });
 </script>
 
@@ -222,6 +272,120 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.language-selector {
+  position: relative;
+}
+
+.btn-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-language:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar.scrolled .btn-language {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.navbar.scrolled .btn-language:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+}
+
+.btn-language .flag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.btn-language .lang-code {
+  font-family: monospace;
+}
+
+.btn-language .chevron {
+  transition: transform 0.3s ease;
+}
+
+.btn-language .chevron.open {
+  transform: rotate(180deg);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: none;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background: #f3f4f6;
+}
+
+.lang-option.active {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.lang-option .flag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.lang-option .lang-name {
+  flex: 1;
+}
+
+.lang-option svg {
+  color: #10b981;
 }
 
 .btn-signup {
