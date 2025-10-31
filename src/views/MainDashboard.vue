@@ -401,19 +401,15 @@ const scrollRegions = (direction) => {
     
     /* Stay at emerald green zone longer */
     #10b981 76%,
-    #0fb57d 78%,
     
-    /* Smooth gradual transition back to dark */
-    #0ea976 80%,
-    #0d9d6e 82%,
-    #0c9166 84%,
-    #0b855e 86%,
-    #0a7956 88%,
-    #096d4e 90%,
-    #086146 92%,
-    #07553e 94%,
-    #064936 96%,
-    #053d2e 98%,
+    /* Fast transition back to dark - no light area visible */
+    #086146 78%,
+    #064936 80%,
+    #053d2e 82%,
+    #042f28 84%,
+    #032520 86%,
+    #021b18 88%,
+    #121212 90%,
     #121212 100%
   );
 }
