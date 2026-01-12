@@ -34,7 +34,9 @@ html {
 
 /* Global transitions */
 * {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 /* Links */
@@ -108,7 +110,8 @@ textarea:focus {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -117,7 +120,8 @@ textarea:focus {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

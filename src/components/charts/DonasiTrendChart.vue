@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch } from 'vue'
 import {
   Chart,
   LineController,
@@ -17,8 +17,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  Filler
-} from 'chart.js';
+  Filler,
+} from 'chart.js'
 
 // Register Chart.js components
 Chart.register(
@@ -30,27 +30,27 @@ Chart.register(
   Title,
   Tooltip,
   Legend,
-  Filler
-);
+  Filler,
+)
 
 const props = defineProps({
   data: {
     type: Array,
-    required: true
-  }
-});
+    required: true,
+  },
+})
 
-const chartCanvas = ref(null);
-let chartInstance = null;
+const chartCanvas = ref(null)
+let chartInstance = null
 
 const createChart = () => {
-  if (!chartCanvas.value) return;
+  if (!chartCanvas.value) return
 
-  const ctx = chartCanvas.value.getContext('2d');
+  const ctx = chartCanvas.value.getContext('2d')
 
   // Destroy existing chart if any
   if (chartInstance) {
-    chartInstance.destroy();
+    chartInstance.destroy()
   }
 
   chartInstance = new Chart(ctx, {
@@ -73,8 +73,8 @@ const createChart = () => {
           pointHoverRadius: 7,
           pointHoverBackgroundColor: '#059669',
           pointHoverBorderWidth: 3,
-        }
-      ]
+        },
+      ],
     },
     options: {
       responsive: true,
@@ -82,7 +82,7 @@ const createChart = () => {
       aspectRatio: 2.5,
       plugins: {
         legend: {
-          display: false
+          display: false,
         },
         tooltip: {
           backgroundColor: 'rgba(17, 24, 39, 0.95)',
@@ -93,57 +93,61 @@ const createChart = () => {
           bodyColor: '#fff',
           displayColors: false,
           callbacks: {
-            label: function(context) {
-              return `${context.parsed.y} kg`;
-            }
-          }
-        }
+            label: function (context) {
+              return `${context.parsed.y} kg`
+            },
+          },
+        },
       },
       scales: {
         y: {
           beginAtZero: true,
           grid: {
             color: 'rgba(229, 231, 235, 0.5)',
-            drawBorder: false
+            drawBorder: false,
           },
           ticks: {
             color: '#6b7280',
             font: {
-              size: 12
+              size: 12,
             },
-            callback: function(value) {
-              return value + ' kg';
-            }
-          }
+            callback: function (value) {
+              return value + ' kg'
+            },
+          },
         },
         x: {
           grid: {
             display: false,
-            drawBorder: false
+            drawBorder: false,
           },
           ticks: {
             color: '#6b7280',
             font: {
-              size: 12
-            }
-          }
-        }
+              size: 12,
+            },
+          },
+        },
       },
       interaction: {
         intersect: false,
-        mode: 'index'
-      }
-    }
-  });
-};
+        mode: 'index',
+      },
+    },
+  })
+}
 
 onMounted(() => {
-  createChart();
-});
+  createChart()
+})
 
-watch(() => props.data, () => {
-  createChart();
-}, { deep: true });
+watch(
+  () => props.data,
+  () => {
+    createChart()
+  },
+  { deep: true },
+)
 </script>
 
 <style scoped>

@@ -13,7 +13,17 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
       <div class="header-content">
         <div class="logo-section">
           <div class="logo-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
               <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
               <path d="M12 3v6"></path>
@@ -26,7 +36,17 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
         </div>
         <nav class="main-nav">
           <router-link to="/" class="nav-link" active-class="active">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
@@ -59,7 +79,9 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
         </div>
         <div class="footer-section">
           <h4>Tentang</h4>
-          <p>Platform komunitas untuk mengurangi food waste dan membantu masyarakat yang membutuhkan.</p>
+          <p>
+            Platform komunitas untuk mengurangi food waste dan membantu masyarakat yang membutuhkan.
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -166,7 +188,9 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
 /* Transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .fade-enter-from {
@@ -182,7 +206,7 @@ const isMainDashboard = computed(() => route.name === 'MainDashboard')
 /* Footer */
 .app-footer {
   background: #121212;
-  
+
   margin-top: 4rem;
 }
 

@@ -3,7 +3,7 @@
     <div class="hero-background" :style="{ backgroundImage: `url(${heroImage})` }">
       <div class="hero-overlay"></div>
     </div>
-    
+
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-title">
@@ -14,7 +14,17 @@
         </p>
         <div class="hero-cta">
           <button class="btn-primary" @click="handleSignup">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
               <line x1="19" x2="19" y1="8" y2="14"></line>
@@ -23,7 +33,7 @@
             {{ t('heroMain.button') }}
           </button>
         </div>
-        
+
         <!-- Impact Stats -->
         <div class="hero-stats">
           <div class="stat-item">
@@ -50,20 +60,20 @@
 </template>
 
 <script setup>
-import { useLanguage } from '@/composables/useLanguage';
-import heroImage from '@/assets/NourishHubActor.png';
+import { useLanguage } from '@/composables/useLanguage'
+import heroImage from '@/assets/NourishHubActor.png'
 
-const { t } = useLanguage();
+const { t } = useLanguage()
 
 const handleSignup = () => {
   // Scroll to contact section or show signup form
-  const contactSection = document.querySelector('#contact');
+  const contactSection = document.querySelector('#contact')
   if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
+    contactSection.scrollIntoView({ behavior: 'smooth' })
   } else {
-    alert('Join NourishHub community! Contact us at info@nourishhub.com');
+    alert('Join NourishHub community! Contact us at info@nourishhub.com')
   }
-};
+}
 </script>
 
 <style scoped>

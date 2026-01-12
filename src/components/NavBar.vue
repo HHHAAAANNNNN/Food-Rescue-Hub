@@ -1,22 +1,70 @@
 <template>
-  <nav class="navbar" :class="{ 'scrolled': isScrolled }">
+  <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="nav-container">
       <!-- Logo & Brand -->
       <div class="nav-brand">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+          ></path>
         </svg>
         <span class="brand-name">NourishHub</span>
       </div>
 
       <!-- Desktop Menu -->
-      <div class="nav-menu" :class="{ 'active': isMobileMenuOpen }">
-        <a href="#about" class="nav-link" :class="{ 'active': activeSection === 'about' }" @click="handleNavClick">{{ t('navbar.aboutUs') }}</a>
-        <a href="#why-matters" class="nav-link" :class="{ 'active': activeSection === 'why-matters' }" @click="handleNavClick">{{ t('navbar.whyMatters') }}</a>
-        <a href="#chart" class="nav-link" :class="{ 'active': activeSection === 'chart' }" @click="handleNavClick">{{ t('navbar.dataInsights') }}</a>
-        <a href="#how-it-works" class="nav-link" :class="{ 'active': activeSection === 'how-it-works' }" @click="handleNavClick">{{ t('navbar.howItWorks') }}</a>
-        <a href="#sdgs" class="nav-link" :class="{ 'active': activeSection === 'sdgs' }" @click="handleNavClick">{{ t('navbar.sdgsImpact') }}</a>
-        <a href="#regions" class="nav-link" :class="{ 'active': activeSection === 'regions' }" @click="handleNavClick">{{ t('navbar.ourRegions') }}</a>
+      <div class="nav-menu" :class="{ active: isMobileMenuOpen }">
+        <a
+          href="#about"
+          class="nav-link"
+          :class="{ active: activeSection === 'about' }"
+          @click="handleNavClick"
+          >{{ t('navbar.aboutUs') }}</a
+        >
+        <a
+          href="#why-matters"
+          class="nav-link"
+          :class="{ active: activeSection === 'why-matters' }"
+          @click="handleNavClick"
+          >{{ t('navbar.whyMatters') }}</a
+        >
+        <a
+          href="#chart"
+          class="nav-link"
+          :class="{ active: activeSection === 'chart' }"
+          @click="handleNavClick"
+          >{{ t('navbar.dataInsights') }}</a
+        >
+        <a
+          href="#how-it-works"
+          class="nav-link"
+          :class="{ active: activeSection === 'how-it-works' }"
+          @click="handleNavClick"
+          >{{ t('navbar.howItWorks') }}</a
+        >
+        <a
+          href="#sdgs"
+          class="nav-link"
+          :class="{ active: activeSection === 'sdgs' }"
+          @click="handleNavClick"
+          >{{ t('navbar.sdgsImpact') }}</a
+        >
+        <a
+          href="#regions"
+          class="nav-link"
+          :class="{ active: activeSection === 'regions' }"
+          @click="handleNavClick"
+          >{{ t('navbar.ourRegions') }}</a
+        >
       </div>
 
       <!-- CTA Button -->
@@ -26,22 +74,45 @@
           <button class="btn-language">
             <span class="flag">{{ getCurrentLanguage.flag }}</span>
             <span class="lang-code">{{ getCurrentLanguage.code.toUpperCase() }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron" :class="{ 'open': isLanguageDropdownOpen }">
-              <path d="m6 9 6 6 6-6"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="chevron"
+              :class="{ open: isLanguageDropdownOpen }"
+            >
+              <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
           <div class="language-dropdown" v-if="isLanguageDropdownOpen">
-            <button 
-              v-for="lang in languages" 
+            <button
+              v-for="lang in languages"
               :key="lang.code"
               class="lang-option"
-              :class="{ 'active': currentLanguage === lang.code }"
+              :class="{ active: currentLanguage === lang.code }"
               @click.stop="selectLanguage(lang.code)"
             >
               <span class="flag">{{ lang.flag }}</span>
               <span class="lang-name">{{ lang.name }}</span>
-              <svg v-if="currentLanguage === lang.code" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5"/>
+              <svg
+                v-if="currentLanguage === lang.code"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6 9 17l-5-5" />
               </svg>
             </button>
           </div>
@@ -54,108 +125,109 @@
 
       <!-- Mobile Menu Toggle -->
       <button class="mobile-toggle" @click="toggleMobileMenu" aria-label="Toggle menu">
-        <span class="hamburger" :class="{ 'active': isMobileMenuOpen }"></span>
+        <span class="hamburger" :class="{ active: isMobileMenuOpen }"></span>
       </button>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { useLanguage } from '@/composables/useLanguage';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useLanguage } from '@/composables/useLanguage'
 
-const { currentLanguage, languages, setLanguage, getCurrentLanguage, t, initLanguage } = useLanguage();
+const { currentLanguage, languages, setLanguage, getCurrentLanguage, t, initLanguage } =
+  useLanguage()
 
-const isScrolled = ref(false);
-const isMobileMenuOpen = ref(false);
-const activeSection = ref('');
-const isLanguageDropdownOpen = ref(false);
+const isScrolled = ref(false)
+const isMobileMenuOpen = ref(false)
+const activeSection = ref('')
+const isLanguageDropdownOpen = ref(false)
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50;
-  
+  isScrolled.value = window.scrollY > 50
+
   // Update active section based on scroll position
-  const sections = ['about', 'why-matters', 'chart', 'how-it-works', 'sdgs', 'regions'];
-  const scrollPosition = window.scrollY + 100;
-  
+  const sections = ['about', 'why-matters', 'chart', 'how-it-works', 'sdgs', 'regions']
+  const scrollPosition = window.scrollY + 100
+
   for (const sectionId of sections) {
-    const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId)
     if (section) {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        activeSection.value = sectionId;
-        break;
+        activeSection.value = sectionId
+        break
       }
     }
   }
-};
+}
 
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
-};
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
 
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-};
+  isMobileMenuOpen.value = false
+}
 
 const handleNavClick = (event) => {
-  event.preventDefault();
-  closeMobileMenu();
-  
-  const targetId = event.currentTarget.getAttribute('href').substring(1);
-  const targetElement = document.getElementById(targetId);
-  
+  event.preventDefault()
+  closeMobileMenu()
+
+  const targetId = event.currentTarget.getAttribute('href').substring(1)
+  const targetElement = document.getElementById(targetId)
+
   if (targetElement) {
-    const navbarHeight = 80; // Approximate navbar height
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-    
+    const navbarHeight = 80 // Approximate navbar height
+    const elementPosition = targetElement.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
-    });
+      behavior: 'smooth',
+    })
   }
-};
+}
 
 const handleSignup = () => {
   // Navigate to signup section or form
-  const signupSection = document.querySelector('#signup');
+  const signupSection = document.querySelector('#signup')
   if (signupSection) {
-    signupSection.scrollIntoView({ behavior: 'smooth' });
+    signupSection.scrollIntoView({ behavior: 'smooth' })
   } else {
-    alert('Coming soon! Join the NourishHub community movement.');
+    alert('Coming soon! Join the NourishHub community movement.')
   }
-};
+}
 
 const toggleLanguageDropdown = () => {
-  isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value;
-};
+  isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value
+}
 
 const selectLanguage = (langCode) => {
-  setLanguage(langCode);
-  isLanguageDropdownOpen.value = false;
-};
+  setLanguage(langCode)
+  isLanguageDropdownOpen.value = false
+}
 
 // Close language dropdown when clicking outside
 const handleClickOutside = (event) => {
-  const languageSelector = document.querySelector('.language-selector');
+  const languageSelector = document.querySelector('.language-selector')
   if (languageSelector && !languageSelector.contains(event.target)) {
-    isLanguageDropdownOpen.value = false;
+    isLanguageDropdownOpen.value = false
   }
-};
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-  document.addEventListener('click', handleClickOutside);
-  initLanguage();
-});
+  window.addEventListener('scroll', handleScroll)
+  document.addEventListener('click', handleClickOutside)
+  initLanguage()
+})
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-  document.removeEventListener('click', handleClickOutside);
-});
+  window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <style scoped>
