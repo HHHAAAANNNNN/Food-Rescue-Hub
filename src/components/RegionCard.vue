@@ -2,7 +2,17 @@
   <div class="region-card" @click="$emit('click')">
     <div class="card-header">
       <div class="icon-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
@@ -11,7 +21,17 @@
     </div>
     <p class="description">{{ region.description }}</p>
     <div class="coordinator">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
         <circle cx="12" cy="7" r="4"></circle>
       </svg>
@@ -34,11 +54,11 @@
 </template>
 
 <script setup>
-import { useLanguage } from '@/composables/useLanguage';
+import { useLanguage } from '@/composables/useLanguage'
 
-const { t } = useLanguage();
+const { t } = useLanguage()
 
-defineProps({ region: Object });
+defineProps({ region: Object })
 </script>
 
 <style scoped>

@@ -4,7 +4,17 @@
       <!-- Header -->
       <div class="section-header">
         <span class="header-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M12 16v-4"></path>
             <path d="M12 8h.01"></path>
@@ -24,7 +34,17 @@
           <div class="step-card">
             <div class="step-number">01</div>
             <div class="step-icon collection">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
                 <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
                 <path d="M12 3v6"></path>
@@ -43,7 +63,17 @@
             </div>
           </div>
           <div class="step-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
@@ -55,7 +85,17 @@
           <div class="step-card">
             <div class="step-number">02</div>
             <div class="step-icon sorting">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M3 3h18v18H3z"></path>
                 <path d="M9 3v18"></path>
                 <path d="M3 9h18"></path>
@@ -74,7 +114,17 @@
             </div>
           </div>
           <div class="step-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
@@ -86,7 +136,17 @@
           <div class="step-card">
             <div class="step-number">03</div>
             <div class="step-icon processing">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M12 2v4"></path>
                 <path d="m16.2 7.8 2.9-2.9"></path>
                 <path d="M18 12h4"></path>
@@ -110,7 +170,17 @@
             </div>
           </div>
           <div class="step-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
@@ -122,7 +192,17 @@
           <div class="step-card">
             <div class="step-number">04</div>
             <div class="step-icon distribution">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -142,47 +222,46 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
-import { useLanguage } from '@/composables/useLanguage';
+import { onMounted, onUnmounted } from 'vue'
+import { useLanguage } from '@/composables/useLanguage'
 
-const { t } = useLanguage();
+const { t } = useLanguage()
 
-let observer = null;
+let observer = null
 
 onMounted(() => {
   // Intersection Observer for scroll animation
   const observerOptions = {
     root: null,
     threshold: 0.2,
-    rootMargin: '0px'
-  };
+    rootMargin: '0px',
+  }
 
   observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
+        entry.target.classList.add('animate-in')
       }
-    });
-  }, observerOptions);
+    })
+  }, observerOptions)
 
   // Observe all process steps
-  const steps = document.querySelectorAll('.process-step');
+  const steps = document.querySelectorAll('.process-step')
   steps.forEach((step) => {
-    observer.observe(step);
-  });
-});
+    observer.observe(step)
+  })
+})
 
 onUnmounted(() => {
   if (observer) {
-    observer.disconnect();
+    observer.disconnect()
   }
-});
+})
 </script>
 
 <style scoped>
@@ -261,7 +340,8 @@ onUnmounted(() => {
   top: 60px;
   bottom: 60px;
   width: 4px;
-  background: linear-gradient(180deg, 
+  background: linear-gradient(
+    180deg,
     rgba(16, 185, 129, 0.8) 0%,
     rgba(16, 185, 129, 0.6) 25%,
     rgba(16, 185, 129, 0.6) 75%,
@@ -285,19 +365,19 @@ onUnmounted(() => {
   transform: translateX(0);
 }
 
-.process-step[data-step="1"].animate-in {
+.process-step[data-step='1'].animate-in {
   transition-delay: 0.1s;
 }
 
-.process-step[data-step="2"].animate-in {
+.process-step[data-step='2'].animate-in {
   transition-delay: 0.3s;
 }
 
-.process-step[data-step="3"].animate-in {
+.process-step[data-step='3'].animate-in {
   transition-delay: 0.5s;
 }
 
-.process-step[data-step="4"].animate-in {
+.process-step[data-step='4'].animate-in {
   transition-delay: 0.7s;
 }
 
@@ -311,16 +391,18 @@ onUnmounted(() => {
   background: #10b981;
   border: 4px solid rgba(6, 78, 59, 1);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2),
-              0 0 20px rgba(16, 185, 129, 0.6);
+  box-shadow:
+    0 0 0 4px rgba(16, 185, 129, 0.2),
+    0 0 20px rgba(16, 185, 129, 0.6);
   z-index: 10;
   transition: all 0.3s ease;
 }
 
 .process-step:hover::before {
   transform: scale(1.3);
-  box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.3),
-              0 0 30px rgba(16, 185, 129, 0.8);
+  box-shadow:
+    0 0 0 8px rgba(16, 185, 129, 0.3),
+    0 0 30px rgba(16, 185, 129, 0.8);
 }
 
 /* Step Card */
@@ -472,7 +554,8 @@ onUnmounted(() => {
 }
 
 @keyframes bounce-arrow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) rotate(90deg) translateY(0);
   }
   50% {

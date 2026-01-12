@@ -3,8 +3,20 @@
     <!-- Hook Header Section -->
     <div class="hook-header">
       <div class="hook-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+          ></path>
           <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
           <line x1="12" y1="22.08" x2="12" y2="12"></line>
         </svg>
@@ -14,8 +26,8 @@
         {{ t('chart.title') }}
       </h2>
       <p class="hook-description">
-        {{ t('chart.description1') }} <br>
-        <span v-html="t('chart.description2')"></span> <br> 
+        {{ t('chart.description1') }} <br />
+        <span v-html="t('chart.description2')"></span> <br />
         {{ t('chart.description3') }}
       </p>
     </div>
@@ -26,9 +38,15 @@
           <h3 class="chart-title">{{ t('chart.chartTitle') }}</h3>
           <p class="chart-subtitle" :key="selectedCountry">
             <template v-if="selectedCountry">
-              <strong>{{ selectedCountry }}</strong> {{ t('chart.generates') }} <strong>{{ getCountryData(selectedCountry)?.waste }} {{ t('chart.millionTons') }}</strong> 
-              (<strong>{{ getPercentage(getCountryData(selectedCountry)?.waste) }}%</strong> {{ t('chart.ofASEAN') }}) 
-              {{ t('chart.with') }} <strong>{{ getCountryData(selectedCountry)?.perCapita }} {{ t('chart.perCapita') }}</strong>
+              <strong>{{ selectedCountry }}</strong> {{ t('chart.generates') }}
+              <strong
+                >{{ getCountryData(selectedCountry)?.waste }} {{ t('chart.millionTons') }}</strong
+              >
+              (<strong>{{ getPercentage(getCountryData(selectedCountry)?.waste) }}%</strong>
+              {{ t('chart.ofASEAN') }}) {{ t('chart.with') }}
+              <strong
+                >{{ getCountryData(selectedCountry)?.perCapita }} {{ t('chart.perCapita') }}</strong
+              >
             </template>
             <template v-else>
               {{ t('chart.chartSubtitle') }}
@@ -41,7 +59,17 @@
       </div>
       <div class="chart-footer">
         <p class="data-source">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M12 16v-4"></path>
             <path d="M12 8h.01"></path>
@@ -54,8 +82,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
-import { useLanguage } from '@/composables/useLanguage';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useLanguage } from '@/composables/useLanguage'
 import {
   Chart,
   BarController,
@@ -64,27 +92,19 @@ import {
   LinearScale,
   Title,
   Tooltip,
-  Legend
-} from 'chart.js';
+  Legend,
+} from 'chart.js'
 
-const { t } = useLanguage();
+const { t } = useLanguage()
 
 // Register Chart.js components
-Chart.register(
-  BarController,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Title,
-  Tooltip,
-  Legend
-);
+Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend)
 
-const chartCanvas = ref(null);
-const selectedCountry = ref(null);
-const chartSection = ref(null);
-let chartInstance = null;
-let hasAnimated = ref(false);
+const chartCanvas = ref(null)
+const selectedCountry = ref(null)
+const chartSection = ref(null)
+let chartInstance = null
+let hasAnimated = ref(false)
 
 // Data ASEAN sorted by waste amount (highest to lowest)
 const aseanData = [
@@ -98,111 +118,113 @@ const aseanData = [
   { country: 'Laos', year: 1997, waste: 0.674, perCapita: 89, color: '#06b6d4' },
   { country: 'Singapore', year: 1967, waste: 0.636, perCapita: 99, color: '#84cc16' },
   { country: 'Brunei', year: 1984, waste: 0.034, perCapita: 76, color: '#10b981' },
-];
+]
 
 const getCountryData = (countryName) => {
-  return aseanData.find(c => c.country === countryName);
-};
+  return aseanData.find((c) => c.country === countryName)
+}
 
 // Calculate total and percentages
-const totalWaste = computed(() => aseanData.reduce((sum, d) => sum + d.waste, 0));
+const totalWaste = computed(() => aseanData.reduce((sum, d) => sum + d.waste, 0))
 
 const getPercentage = (waste) => {
-  return ((waste / totalWaste.value) * 100).toFixed(1);
-};
+  return ((waste / totalWaste.value) * 100).toFixed(1)
+}
 
 onMounted(() => {
-  if (!chartCanvas.value) return;
+  if (!chartCanvas.value) return
 
-  const ctx = chartCanvas.value.getContext('2d');
-  
+  const ctx = chartCanvas.value.getContext('2d')
+
   // Create chart with initial data at 0
   chartInstance = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: aseanData.map(d => d.country),
-      datasets: [{
-        label: 'Food Waste (Million Tons/Year)',
-        data: aseanData.map(() => 0), // Start with 0
-        backgroundColor: aseanData.map(d => d.color),
-        borderColor: aseanData.map(d => d.color),
-        borderWidth: 2,
-        borderRadius: 8,
-        barThickness: 40,
-      }]
+      labels: aseanData.map((d) => d.country),
+      datasets: [
+        {
+          label: 'Food Waste (Million Tons/Year)',
+          data: aseanData.map(() => 0), // Start with 0
+          backgroundColor: aseanData.map((d) => d.color),
+          borderColor: aseanData.map((d) => d.color),
+          borderWidth: 2,
+          borderRadius: 8,
+          barThickness: 40,
+        },
+      ],
     },
     options: {
       indexAxis: 'y', // Horizontal bars
       responsive: true,
       maintainAspectRatio: false,
       animation: {
-        duration: 0 // Disable default animation, we'll control it manually
+        duration: 0, // Disable default animation, we'll control it manually
       },
       onClick: (event, elements) => {
         if (elements.length > 0) {
-          const index = elements[0].index;
-          const clickedCountry = aseanData[index].country;
-          
+          const index = elements[0].index
+          const clickedCountry = aseanData[index].country
+
           // Toggle: if same country clicked, reset to null
           if (selectedCountry.value === clickedCountry) {
-            selectedCountry.value = null;
+            selectedCountry.value = null
           } else {
-            selectedCountry.value = clickedCountry;
+            selectedCountry.value = clickedCountry
           }
         } else {
           // Clicked on empty space, reset
-          selectedCountry.value = null;
+          selectedCountry.value = null
         }
       },
       plugins: {
         legend: {
-          display: false
+          display: false,
         },
         tooltip: {
           backgroundColor: 'rgba(0, 0, 0, 0.9)',
           padding: 16,
           titleFont: {
             size: 16,
-            weight: 'bold'
+            weight: 'bold',
           },
           bodyFont: {
-            size: 14
+            size: 14,
           },
           bodySpacing: 8,
           callbacks: {
             title: (context) => {
-              const index = context[0].dataIndex;
-              return `${aseanData[index].country} (Since ${aseanData[index].year})`;
+              const index = context[0].dataIndex
+              return `${aseanData[index].country} (Since ${aseanData[index].year})`
             },
             label: (context) => {
-              const index = context.dataIndex;
-              const waste = aseanData[index].waste;
-              const percentage = getPercentage(waste);
+              const index = context.dataIndex
+              const waste = aseanData[index].waste
+              const percentage = getPercentage(waste)
               return [
                 `Total: ${waste} million tons/year`,
                 `Percentage: ${percentage}% of ASEAN total`,
-                `Per Capita: ${aseanData[index].perCapita} kg/year`
-              ];
-            }
-          }
-        }
+                `Per Capita: ${aseanData[index].perCapita} kg/year`,
+              ]
+            },
+          },
+        },
       },
       scales: {
         x: {
           beginAtZero: true,
           grid: {
             color: 'rgba(209, 250, 229, 0.1)',
-            drawBorder: false
+            drawBorder: false,
           },
           ticks: {
             color: '#d1fae5',
             font: {
               size: 12,
-              weight: '600'
+              weight: '600',
             },
-            callback: function(value) {
-              return value + 'M';
-            }
+            callback: function (value) {
+              return value + 'M'
+            },
           },
           title: {
             display: true,
@@ -210,89 +232,92 @@ onMounted(() => {
             color: '#6ee7b7',
             font: {
               size: 14,
-              weight: 'bold'
-            }
-          }
+              weight: 'bold',
+            },
+          },
         },
         y: {
           grid: {
-            display: false
+            display: false,
           },
           ticks: {
             color: '#d1fae5',
             font: {
               size: 13,
-              weight: '700'
-            }
-          }
-        }
+              weight: '700',
+            },
+          },
+        },
       },
       animation: {
         animateRotate: true,
         animateScale: true,
         duration: 1000,
-        easing: 'easeInOutQuart'
-      }
-    }
-  });
-  
+        easing: 'easeInOutQuart',
+      },
+    },
+  })
+
   // Intersection Observer to trigger animation when chart becomes visible
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimated.value) {
-        hasAnimated.value = true;
-        animateChart();
-      }
-    });
-  }, {
-    threshold: 0.3 // Trigger when 30% of chart is visible
-  });
-  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated.value) {
+          hasAnimated.value = true
+          animateChart()
+        }
+      })
+    },
+    {
+      threshold: 0.3, // Trigger when 30% of chart is visible
+    },
+  )
+
   // Observe the chart canvas
   if (chartCanvas.value) {
-    observer.observe(chartCanvas.value);
+    observer.observe(chartCanvas.value)
   }
-  
+
   // Cleanup observer
   onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
+    observer.disconnect()
+  })
+})
 
 // Function to animate chart bars from 0 to actual values
 const animateChart = () => {
-  if (!chartInstance) return;
-  
-  const duration = 1500; // 1.5 seconds
-  const startTime = Date.now();
-  const targetData = aseanData.map(d => d.waste);
-  
+  if (!chartInstance) return
+
+  const duration = 1500 // 1.5 seconds
+  const startTime = Date.now()
+  const targetData = aseanData.map((d) => d.waste)
+
   const animate = () => {
-    const currentTime = Date.now();
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    
+    const currentTime = Date.now()
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+
     // Easing function for smooth animation (easeOutCubic)
-    const easeProgress = 1 - Math.pow(1 - progress, 3);
-    
+    const easeProgress = 1 - Math.pow(1 - progress, 3)
+
     // Update chart data
-    chartInstance.data.datasets[0].data = targetData.map(value => value * easeProgress);
-    chartInstance.update('none'); // Update without animation
-    
+    chartInstance.data.datasets[0].data = targetData.map((value) => value * easeProgress)
+    chartInstance.update('none') // Update without animation
+
     // Continue animating if not finished
     if (progress < 1) {
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animate)
     }
-  };
-  
-  animate();
-};
+  }
+
+  animate()
+}
 
 onBeforeUnmount(() => {
   if (chartInstance) {
-    chartInstance.destroy();
+    chartInstance.destroy()
   }
-});
+})
 </script>
 
 <style scoped>
